@@ -1,4 +1,5 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
     mode: "production",
     entry: {
@@ -18,4 +19,10 @@ module.exports = {
             },
         ],
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: "ui_component_library",
+            template: "index.html",
+        }),
+    ],
 };
