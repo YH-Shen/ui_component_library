@@ -1,0 +1,20 @@
+{
+  "name": "ui_component_library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yuhui-Shen/test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yuhui-Shen/test/issues"
+  },
+  "homepage": "https://github.com/Yuhui-Shen/test#readme"
+}
