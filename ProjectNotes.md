@@ -11,3 +11,18 @@
 
 1. The lock file for yarn. (gnerated when using yarn to manage npm dependencies.)
 2. It locks down the versions for the dependencies specified in the package.json file
+
+######## importing
+
+Importing ADDRESS:
+Use relative address if importing from your own file
+Use library name if importing from third-party library.
+
+importing default export:
+import GIVEN_NAME from ADDRESS
+
+importing named values:
+import {PARA_NAME} from ADDRESS
+
+importing a combination:
+import GIVEN_NAME, {PARA_NAME, ...} from ADDRESS

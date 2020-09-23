@@ -1,5 +1,6 @@
+import React from "react";
 function Button() {
-    return <div>button</div>;
+    return <div>butto2n</div>;
 }
 
 export default Button;
