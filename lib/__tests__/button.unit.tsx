@@ -5,6 +5,6 @@ import Button from "../button";
 describe("button tests", () => {
     it("it's a div", () => {
         const json = renderer.create(<Button />).toJSON();
-        expect(json).toMatchSnapshot;
+        expect(json).toMatchSnapshot();
     });
 });

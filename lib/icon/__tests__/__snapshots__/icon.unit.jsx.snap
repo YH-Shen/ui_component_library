@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon tests successiful rendering 1`] = `
+<svg
+  className="yui-icon"
+>
+  <use
+    xlinkHref="#twitter"
+  />
+</svg>
+`;
