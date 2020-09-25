@@ -15,8 +15,12 @@ ReactDOM.render(
             onMouseEnter={() => console.log("enter")}
             onMouseLeave={() => console.log("leave")}
         />
-        {/* <Icon name="facebook" />
-        <Icon name="wechat" /> */}
+        <Icon name="facebook" />
+        <Icon name="instagram" />
+        <Icon name="wechat" />
+        <Icon name="dribbble" />
+        <Icon name="behance" />
+        <Icon name="pinterest" />
     </div>,
     document.querySelector("#root")
 );
