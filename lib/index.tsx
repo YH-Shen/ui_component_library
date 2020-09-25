@@ -4,11 +4,14 @@ import ReactDOM from "react-dom";
 // import Button from "./button";
 import Icon from "./icon";
 
+const boo = () => {
+    console.log("boo");
+};
 ReactDOM.render(
     <div>
-        <Icon name="twitter" />
-        <Icon name="facebook" />
-        <Icon name="wechat" />
+        <Icon name="twitter" onClick={boo} />
+        {/* <Icon name="facebook" />
+        <Icon name="wechat" /> */}
     </div>,
     document.querySelector("#root")
 );
