@@ -9,7 +9,12 @@ const boo: React.MouseEventHandler = (e) => {
 };
 ReactDOM.render(
     <div>
-        <Icon name="twitter" onClick={boo} />
+        <Icon
+            name="twitter"
+            onClick={boo}
+            onMouseEnter={() => console.log("enter")}
+            onMouseLeave={() => console.log("leave")}
+        />
         {/* <Icon name="facebook" />
         <Icon name="wechat" /> */}
     </div>,
