@@ -75,3 +75,8 @@ Perfect chance to use axios.get information here.
 useEffect(() => {
 axios.get('')
 }, [])
+
+############### static importing and dynamic importing
+
+static: suitable for tree-shaking optimization but not as convinent for importing many items
+dynamic: scalable

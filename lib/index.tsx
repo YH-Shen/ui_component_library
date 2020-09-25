@@ -6,7 +6,9 @@ import Icon from "./icon";
 
 ReactDOM.render(
     <div>
+        <Icon name="twitter" />
+        <Icon name="facebook" />
         <Icon name="wechat" />
     </div>,
-    document.body
+    document.querySelector("#root")
 );

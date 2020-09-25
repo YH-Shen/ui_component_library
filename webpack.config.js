@@ -21,6 +21,10 @@ module.exports = {
                 test: /\.tsx?$/,
                 loader: "awesome-typescript-loader",
             },
+            {
+                test: /\.svg$/,
+                loader: "svg-sprite-loader",
+            },
         ],
     },
     // plugins: [
