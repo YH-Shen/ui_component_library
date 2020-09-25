@@ -80,3 +80,13 @@ axios.get('')
 
 static: suitable for tree-shaking optimization but not as convinent for importing many items
 dynamic: scalable
+
+############### style loader, css loader, sass loader
+
+sass loader translates scss doc into css doc as strings.
+css laoder converts the css doc into an object with strings inside.
+style loader converts the object into a style tag enclosing the css. general process as follows:
+
+style_tag = document.createElement("style tag")
+style_tag.innerHTML = "css"
+document.head.appendChild(style_tag)

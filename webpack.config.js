@@ -1,5 +1,5 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+// const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
     // mode: "production",
     entry: {
@@ -24,6 +24,10 @@ module.exports = {
             {
                 test: /\.svg$/,
                 loader: "svg-sprite-loader",
+            },
+            {
+                test: /\.s([ac])ss$/,
+                use: ["style-loader", "css-loader", "sass-loader"],
             },
         ],
     },
