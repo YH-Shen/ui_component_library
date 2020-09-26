@@ -4,7 +4,7 @@ module.exports = {
     verbose: true,
     clearMocks: false,
 
-    reporters: ["default"],
+    reporters: ["default", "jest-junit"],
 
     collectCoverage: true,
     collectCoverageFrom: ["lib/**/*.{ts,tsx}", "!**/node_modules/**"],
