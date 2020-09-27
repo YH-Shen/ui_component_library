@@ -1,6 +1,6 @@
 {
     "name": "ui_component_library-testrun",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "",
     "main": "dist/lib/ui_component_library.js",
     "types": "dist/lib/index",
