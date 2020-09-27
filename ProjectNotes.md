@@ -90,3 +90,9 @@ style loader converts the object into a style tag enclosing the css. general pro
 style_tag = document.createElement("style tag")
 style_tag.innerHTML = "css"
 document.head.appendChild(style_tag)
+
+############# highlights
+
+circle ci
+test coverage
+npm publish
