@@ -1,10 +1,10 @@
-const base = require('./jest.config')
+const base = require("./jest.config");
 module.exports = Object.assign({}, base, {
-    reporters: ['jest-junit'],
+    reporters: ["jest-junit"],
 
     collectCoverage: false,
     collectCoverage: true,
-    collectCoverageFrom: ['lib/**/*.{ts,tsx}', '!**/node_modules/**'],
-    coverageDirectory: 'coverage',
-    coverageReporters: ['text', 'lcov'],
-})
+    collectCoverageFrom: ["lib/**/*.{ts,tsx}", "!**/node_modules/**"],
+    coverageDirectory: "coverage",
+    coverageReporters: ["text", "lcov"],
+});
