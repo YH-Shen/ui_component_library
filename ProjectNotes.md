@@ -95,4 +95,15 @@ document.head.appendChild(style_tag)
 
 circle ci
 test coverage
-npm publish
+auto test and
+auto npm publish
+
+########## npm version
+
+major.minor.patch
+
+commands:
+(comes with auto git commit)
+npm version major >>>> 0.0.1 -> 1.0.0 for major change in API, affects cuurent code
+npm version minor >>>> 0.0.1 -> 0.1.0 for minor change in API, doesn't affect current code
+npm version patch >>>> 0.0.1 -> 0.0.2 for bug fixes, no API changes
