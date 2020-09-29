@@ -93,6 +93,7 @@ document.head.appendChild(style_tag)
 
 ############# highlights
 
+webpack: used awesome-typescript-loader and html-webpack-plugin
 circle ci
 test coverage
 auto test, auto bundle, and auto npm publish after push!
