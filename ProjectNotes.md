@@ -98,6 +98,7 @@ circle ci
 test coverage
 auto test, auto bundle, and auto npm publish after push!
 react router
+used scss attribute selector to avoid interference
 
 ########## npm version
 

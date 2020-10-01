@@ -3,6 +3,7 @@
 
 // import Button from "./button";
 // import Icon from "./icon/icon";
+import "./index.scss";
 export { default as Icon } from "./icon/icon";
 
 // const boo: React.MouseEventHandler = (e) => {

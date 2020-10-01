@@ -1,0 +1,26 @@
+// attribute selector: style any class that starts with "syhui-"
+[class^="syhui-"] {
+    box-sizing: border-box;
+
+    &::after,
+    &::before {
+        box-sizing: border-box;
+    }
+}
+
+button {
+    box-sizing: border-box;
+    height: 32px;
+    margin: 0 4px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    &:first-child {
+        margin-left: 0;
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+}
