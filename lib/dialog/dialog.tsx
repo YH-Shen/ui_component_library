@@ -7,7 +7,7 @@ import { scopedClassMaker } from "../classes";
 import "./dialog.scss";
 interface Props {
     visible: boolean;
-    buttons: Array<React.ReactElement>;
+    buttons?: Array<React.ReactElement>;
     onClose: React.MouseEventHandler;
     onClickMaskClose?: boolean;
 }
@@ -35,9 +35,10 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
                 <header className={sc("header")}>Notification</header>
                 <main className={sc("main")}>{props.children}</main>
                 <footer className={sc("footer")}>
-                    {props.buttons.map((button, index) =>
-                        React.cloneElement(button, { key: index })
-                    )}
+                    {props.buttons &&
+                        props.buttons.map((button, index) =>
+                            React.cloneElement(button, { key: index })
+                        )}
                 </footer>
             </div>
         </Fragment>
@@ -48,5 +49,28 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
 Dialog.defaultProps = {
     onClickMaskClose: false,
 };
+
+const alert = (content: string) => {
+    const component = (
+        <Dialog
+            visible={true}
+            onClose={() => {
+                ReactDOM.render(
+                    React.cloneElement(component, { visible: false }),
+                    div
+                );
+                ReactDOM.unmountComponentAtNode(div);
+                div.remove();
+            }}
+        >
+            {content}
+        </Dialog>
+    );
+    const div = document.createElement("div");
+    document.body.append(div);
+    ReactDOM.render(component, div);
+};
+
+export { alert };
 
 export default Dialog;
