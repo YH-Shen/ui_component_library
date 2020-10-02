@@ -5,6 +5,7 @@ import { Fragment } from "react";
 import { Icon } from "../index";
 import { scopedClassMaker } from "../classes";
 import "./dialog.scss";
+// import Button from "lib/button";
 interface Props {
     visible: boolean;
     buttons?: Array<React.ReactElement>;
@@ -70,7 +71,46 @@ const alert = (content: string) => {
     document.body.append(div);
     ReactDOM.render(component, div);
 };
+const confirm = (
+    content: string,
+    yes?: () => void,
+    no?: () => void
+) => {
+    const onYes = () => {
+        ReactDOM.render(
+            React.cloneElement(component, { visible: false }),
+            div
+        );
+        ReactDOM.unmountComponentAtNode(div);
+        div.remove();
+        yes && yes();
+    };
+    const onNo = () => {
+        ReactDOM.render(
+            React.cloneElement(component, { visible: false }),
+            div
+        );
+        ReactDOM.unmountComponentAtNode(div);
+        div.remove();
+        no && no();
+    };
 
-export { alert };
+    const component = (
+        <Dialog
+            visible={true}
+            onClose={onNo}
+            buttons={[
+                <button onClick={onYes}>yes</button>,
+                <button onClick={onNo}>no</button>,
+            ]}
+        >
+            {content}
+        </Dialog>
+    );
+    const div = document.createElement("div");
+    document.body.appendChild(div);
+    ReactDOM.render(component, div);
+};
+export { alert, confirm };
 
 export default Dialog;
