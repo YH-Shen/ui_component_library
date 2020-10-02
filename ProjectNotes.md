@@ -101,6 +101,18 @@ react router
 used scss attribute selector to avoid interference
 used react protal to prevent context stacking
 
+Dialog:
+onClose={() => {
+ReactDOM.render(
+React.cloneElement(component, { visible: false }),
+div
+);
+ReactDOM.unmountComponentAtNode(div);
+div.remove();
+}}
+re-render the component to change the attribute: visible. Cloned the component and then overwrite the property.
+there was an extra div to remove: remove the events attached onto the div first with "ReactDOM.unmountComponentAtNode()". And then remove the div.
+
 ########## npm version
 
 major.minor.patch
