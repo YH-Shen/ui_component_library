@@ -63,7 +63,7 @@ export default function () {
                         </button>,
                     ]}
                     onClose={() => setY(false)}
-                    onClickMaskClose={true}
+                    mask={{ visible: true, closeOnClick: true }}
                 >
                     <div>hi</div>
                 </Dialog>

@@ -10,7 +10,12 @@ interface Props {
     visible: boolean;
     buttons?: Array<React.ReactElement>;
     onClose: React.MouseEventHandler;
-    onClickMaskClose?: boolean;
+    mask?: {
+        visible?: boolean;
+        closeOnClick?: boolean;
+    };
+    // onClickMaskClose?: boolean;
+    // enableMask?: boolean;
 }
 
 const scopedClass = scopedClassMaker("syhui-dialog");
@@ -22,13 +27,18 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
         props.onClose(e);
     };
     const onClickMask: React.MouseEventHandler = (e) => {
-        if (props.onClickMaskClose) {
+        if (props.mask && props.mask.closeOnClick) {
             props.onClose(e);
         }
     };
-    const x = props.visible ? (
+    const output = props.visible && (
         <Fragment>
-            <div className={sc("mask")} onClick={onClickMask}></div>
+            {props.mask && props.mask.visible && (
+                <div
+                    className={sc("mask")}
+                    onClick={onClickMask}
+                ></div>
+            )}
             <div className={sc()}>
                 <div className={sc("close")} onClick={onClickClose}>
                     <Icon name="close" />
@@ -48,12 +58,17 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
                 )}
             </div>
         </Fragment>
-    ) : null;
-    return ReactDOM.createPortal(x, document.body);
+    );
+    return ReactDOM.createPortal(output, document.body);
 };
 
 Dialog.defaultProps = {
-    onClickMaskClose: false,
+    mask: {
+        visible: true,
+        closeOnClick: false,
+    },
+    // onClickMaskClose: false,
+    // enableMask: true,
 };
 const modal = (
     content: React.ReactNode,

@@ -128,3 +128,10 @@ npm version patch >>>> 0.0.1 -> 0.0.2 for bug fixes, no API changes
 ReactElement can only take tags. ReactNode can take both tags and strings.
 
 type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | undefined;
+
+########## Key Takeaways for Dialog Component
+
+1. Use example for easier development
+2. Used Scoped CLass (higher-order function) for quicker tag naming. Used "syhui-" prefix to avoid interference.
+3. Used React Fragment to attach multiple divs without creating extra layer
+4. Render element based on visbility: const output = props.visible ? (<Fragment></Fragment>): null or const output = props.visible && (<Fragment></Fragment>)
