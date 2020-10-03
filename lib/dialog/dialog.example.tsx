@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import Dialog, { alert, confirm, modal } from "./dialog";
 
 export default function () {
-    const [x, setX] = useState(false);
-    const [y, setY] = useState(false);
+    const [visible1, setVisible1] = useState(false);
+    const [visible2, setVisible2] = useState(false);
     const openModal = () => {
         const close = modal(
             <h1>
@@ -17,52 +17,56 @@ export default function () {
         <div>
             <div>
                 <h1>Example 1</h1>
-                <button onClick={() => setX(!x)}>Click</button>
+                <button onClick={() => setVisible1(!visible1)}>
+                    Click
+                </button>
                 <Dialog
-                    visible={x}
+                    visible={visible1}
                     buttons={[
                         <button
                             onClick={() => {
-                                setX(false);
+                                setVisible1(false);
                             }}
                         >
                             OK
                         </button>,
                         <button
                             onClick={() => {
-                                setX(false);
+                                setVisible1(false);
                             }}
                         >
                             Cancel
                         </button>,
                     ]}
-                    onClose={() => setX(false)}
+                    onClose={() => setVisible1(false)}
                 >
                     <div>hi</div>
                 </Dialog>
             </div>
             <div>
                 <h1>Example 2</h1>
-                <button onClick={() => setY(!y)}>Click</button>
+                <button onClick={() => setVisible2(!visible2)}>
+                    Click
+                </button>
                 <Dialog
-                    visible={y}
+                    visible={visible2}
                     buttons={[
                         <button
                             onClick={() => {
-                                setY(false);
+                                setVisible2(false);
                             }}
                         >
                             OK
                         </button>,
                         <button
                             onClick={() => {
-                                setY(false);
+                                setVisible2(false);
                             }}
                         >
                             Cancel
                         </button>,
                     ]}
-                    onClose={() => setY(false)}
+                    onClose={() => setVisible2(false)}
                     mask={{ visible: true, closeOnClick: true }}
                 >
                     <div>hi</div>

@@ -134,4 +134,5 @@ type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | und
 1. Use example for easier development
 2. Used Scoped CLass (higher-order function) for quicker tag naming. Used "syhui-" prefix to avoid interference.
 3. Used React Fragment to attach multiple divs without creating extra layer
-4. Render element based on visbility: const output = props.visible ? (<Fragment></Fragment>): null or const output = props.visible && (<Fragment></Fragment>)
+4. Render element based on visbility: const output = props.visible && (<Fragment></Fragment>). or use props.visible? (render): null. If else is too much trouble.
+5. Used React Portal to move the node away from it's original parent. Move the content to document.body to avoid context stacking or event bubbling.
