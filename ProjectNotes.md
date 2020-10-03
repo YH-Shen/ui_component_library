@@ -122,3 +122,9 @@ commands:
 npm version major >>>> 0.0.1 -> 1.0.0 for major change in API, affects cuurent code
 npm version minor >>>> 0.0.1 -> 0.1.0 for minor change in API, doesn't affect current code
 npm version patch >>>> 0.0.1 -> 0.0.2 for bug fixes, no API changes
+
+########### React.ReactNode vs React.ReactElement
+
+ReactElement can only take tags. ReactNode can take both tags and strings.
+
+type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | undefined;

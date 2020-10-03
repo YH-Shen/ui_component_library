@@ -35,12 +35,17 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
                 </div>
                 <header className={sc("header")}>Notification</header>
                 <main className={sc("main")}>{props.children}</main>
-                <footer className={sc("footer")}>
-                    {props.buttons &&
-                        props.buttons.map((button, index) =>
-                            React.cloneElement(button, { key: index })
-                        )}
-                </footer>
+                {props.buttons && (
+                    <footer className={sc("footer")}>
+                        {props.buttons &&
+                            props.buttons.length > 0 &&
+                            props.buttons.map((button, index) =>
+                                React.cloneElement(button, {
+                                    key: index,
+                                })
+                            )}
+                    </footer>
+                )}
             </div>
         </Fragment>
     ) : null;
@@ -52,17 +57,19 @@ Dialog.defaultProps = {
 };
 
 const alert = (content: string) => {
+    const onClose = () => {
+        ReactDOM.render(
+            React.cloneElement(component, { visible: false }),
+            div
+        );
+        ReactDOM.unmountComponentAtNode(div);
+        div.remove();
+    };
     const component = (
         <Dialog
             visible={true}
-            onClose={() => {
-                ReactDOM.render(
-                    React.cloneElement(component, { visible: false }),
-                    div
-                );
-                ReactDOM.unmountComponentAtNode(div);
-                div.remove();
-            }}
+            onClose={onClose}
+            buttons={[<button onClick={onClose}>OK</button>]}
         >
             {content}
         </Dialog>
@@ -71,6 +78,7 @@ const alert = (content: string) => {
     document.body.append(div);
     ReactDOM.render(component, div);
 };
+
 const confirm = (
     content: string,
     yes?: () => void,
@@ -111,6 +119,27 @@ const confirm = (
     document.body.appendChild(div);
     ReactDOM.render(component, div);
 };
-export { alert, confirm };
+
+const modal = (content: React.ReactNode | React.ReactFragment) => {
+    const onClose = () => {
+        ReactDOM.render(
+            React.cloneElement(component, { visible: false }),
+            div
+        );
+        ReactDOM.unmountComponentAtNode(div);
+        div.remove();
+    };
+    const component = (
+        <Dialog onClose={onClose} visible={true}>
+            {content}
+        </Dialog>
+    );
+    const div = document.createElement("div");
+    document.body.appendChild(div);
+    ReactDOM.render(component, div);
+    return onClose;
+};
+
+export { alert, confirm, modal };
 
 export default Dialog;
