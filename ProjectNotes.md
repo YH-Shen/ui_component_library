@@ -136,3 +136,15 @@ type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | und
 3. Used React Fragment to attach multiple divs without creating extra layer
 4. Render element based on visbility: const output = props.visible && (<Fragment></Fragment>). or use props.visible? (render): null. If else is too much trouble.
 5. Used React Portal to move the node away from it's original parent. Move the content to document.body to avoid context stacking or event bubbling.
+6. Dynamically render/generate components: declare component as const. Attach the component inside a div, and then append the div onto document.body.
+7. Pass API from enclosure: return a function that controls the varibale inside the enclosure
+
+########## Key Takeaways for Dialog Component
+
+1. Receive attributes for layout may overwirte pre-written classes.
+   Deconstruct props first:
+   const { className, ...rest } = props;
+   And then join the pre-written class name with given classname to be the final className. Use "...rest" for the rest of the props attributes.
+    <div className={[sc(), className].join(" ")} {...rest}>
+
+    But this method is so inconnvienet... Then I improved scopeMaker function to takein the extra classname
