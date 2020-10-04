@@ -3,7 +3,8 @@ import ReactDOM from "react-dom";
 import { Fragment } from "react";
 
 import { Icon } from "../index";
-import { scopedClassMaker } from "../classes";
+import { scopedClassMaker } from "../helpers/classnames";
+
 import "./dialog.scss";
 // import Button from "lib/button";
 interface Props {
