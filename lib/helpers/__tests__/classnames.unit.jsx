@@ -1,4 +1,5 @@
-import classnames from "../classnames";
+import classnames, { scopedClassMaker } from "../classnames";
+
 describe("classnames tests", () => {
     it("receives one className", () => {
         const result = classnames("a");
@@ -29,5 +30,20 @@ describe("classnames tests", () => {
     it("receives nothing", () => {
         const result = classnames();
         expect(result).toEqual("");
+    });
+});
+
+describe("scopedClassMaker", () => {
+    it("Receive strings or objects", () => {
+        const sc = scopedClassMaker("syhui-layout");
+        expect(sc("")).toEqual("syhui-layout");
+        expect(sc("x")).toEqual("syhui-layout-x");
+        expect(sc({ y: true, z: false })).toEqual("syhui-layout-y");
+        expect(sc({ y: true, z: true })).toEqual(
+            "syhui-layout-y syhui-layout-z"
+        );
+        expect(sc({ y: true, z: true }, { extra: "blue" })).toEqual(
+            "syhui-layout-y syhui-layout-z blue"
+        );
     });
 });
