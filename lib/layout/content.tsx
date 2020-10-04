@@ -13,7 +13,7 @@ const Content: React.FunctionComponent<Props> = (props) => {
             className={sc("content", { extra: className })}
             {...rest}
         >
-            Content
+            {props.children}
         </div>
     );
 };

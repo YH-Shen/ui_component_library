@@ -10,7 +10,7 @@ const Header: React.FunctionComponent<Props> = (props) => {
 
     return (
         <div className={sc("header", { extra: className })} {...rest}>
-            Header
+            {props.children}
         </div>
     );
 };
