@@ -34,7 +34,7 @@ describe("classnames tests", () => {
 });
 
 describe("scopedClassMaker", () => {
-    it("Receive strings or objects", () => {
+    it("Receives strings or objects", () => {
         const sc = scopedClassMaker("syhui-layout");
         expect(sc("")).toEqual("syhui-layout");
         expect(sc("x")).toEqual("syhui-layout-x");

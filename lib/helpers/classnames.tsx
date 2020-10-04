@@ -14,33 +14,29 @@ interface ClassToggles {
 }
 function scopedClassMaker(prefix: string) {
     return function namer(
-        name?: string | ClassToggles,
+        name: string | ClassToggles,
         options?: Options
     ) {
         // name = {hasAside: true, active: false, ...}
-        let name2;
-        let result;
+        let namesObject =
+            typeof name === "string" || name === undefined
+                ? { [name]: name }
+                : name;
 
-        if (typeof name === "string" || name === undefined) {
-            name2 = name;
-            result = [prefix, name2].filter(Boolean).join("-");
-        } else {
-            name2 = Object.entries(name)
-                .filter((kv) => kv[1])
-                .map((kv) => kv[0]);
-            // ["hasAside", "x"]
-            result = name2
-                .map((n) => [prefix, n].filter(Boolean).join("-"))
-                .join(" ");
-            // ".syhui-hasAside .syhui-x"
-        }
+        // ["hasAside", "x"]
+        const scoped = Object.entries(namesObject)
+            .filter((kv) => kv[1] !== false)
+            .map((kv) => kv[0])
+            .map((name) => [prefix, name].filter(Boolean).join("-"))
+            .join(" ");
+        // ".syhui-hasAside .syhui-x"
 
         if (options && options.extra) {
-            return [result, options && options.extra]
+            return [scoped, options && options.extra]
                 .filter(Boolean)
                 .join(" ");
         } else {
-            return result;
+            return scoped;
         }
     };
 }
