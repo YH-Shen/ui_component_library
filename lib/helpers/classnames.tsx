@@ -13,32 +13,16 @@ interface ClassToggles {
     // active: boolean;
 }
 function scopedClassMaker(prefix: string) {
-    return function namer(
-        name: string | ClassToggles,
-        options?: Options
-    ) {
-        // name = {hasAside: true, active: false, ...}
-        let namesObject =
-            typeof name === "string" || name === undefined
-                ? { [name]: name }
-                : name;
-
-        // ["hasAside", "x"]
-        const scoped = Object.entries(namesObject)
+    return (name: string | ClassToggles, options?: Options) =>
+        Object.entries(
+            name instanceof Object ? name : { [name]: name }
+        )
             .filter((kv) => kv[1] !== false)
             .map((kv) => kv[0])
             .map((name) => [prefix, name].filter(Boolean).join("-"))
+            .concat((options && options.extra) || [])
             .join(" ");
-        // ".syhui-hasAside .syhui-x"
-
-        if (options && options.extra) {
-            return [scoped, options && options.extra]
-                .filter(Boolean)
-                .join(" ");
-        } else {
-            return scoped;
-        }
-    };
+    // ".syhui-hasAside .syhui-x"
 }
 
 export { scopedClassMaker };
