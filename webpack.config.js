@@ -29,6 +29,10 @@ module.exports = {
                 test: /\.s([ac])ss$/,
                 use: ["style-loader", "css-loader", "sass-loader"],
             },
+            {
+                test: /\.(png|jpe?g|gif)$/,
+                use: ["file-loader"],
+            },
         ],
     },
     // plugins: [

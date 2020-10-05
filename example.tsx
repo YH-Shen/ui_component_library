@@ -7,19 +7,31 @@ import IconExample from "./lib/icon/icon.example";
 import ButtonExample from "./lib/button.example";
 import DialogExample from "./lib/dialog/dialog.example";
 import LayoutExample from "./lib/layout/layout.example";
+import {
+    Layout,
+    Header,
+    Aside,
+    Content,
+    Footer,
+} from "./lib/layout/layout";
+import "./example.scss";
+import logo from "./logo_name.png";
+// import * as logo from "./logo_image.svg";
 
+// const logo = require("./logo.png");
+console.log(logo);
 ReactDOM.render(
     <Router>
-        <div>
-            <header>
-                <div className="logo">SYHUI</div>
-            </header>
-            <div>
-                <aside>
+        <Layout className="page" style={{ border: "1px solid blue" }}>
+            <Header style={{ border: "1px solid purple" }}>
+                <div className="logo">
+                    <img src={logo} alt="" />
+                </div>
+            </Header>
+            <Layout>
+                <Aside style={{ border: "1px solid pink" }}>
                     <h2>Introduction</h2>
-                    {/* <ul>
-                    <li></li>
-                </ul> */}
+
                     <h2>Component</h2>
                     <ul>
                         <li>
@@ -35,8 +47,8 @@ ReactDOM.render(
                             <Link to="/layout">Layout</Link>
                         </li>
                     </ul>
-                </aside>
-                <main>
+                </Aside>
+                <Content>
                     <Route
                         path="/icon"
                         component={IconExample}
@@ -53,9 +65,12 @@ ReactDOM.render(
                         path="/layout"
                         component={LayoutExample}
                     ></Route>
-                </main>
-            </div>
-        </div>
+                </Content>
+            </Layout>
+            <Footer style={{ border: "1px solid black" }}>
+                Footer
+            </Footer>
+        </Layout>
     </Router>,
     document.querySelector("#root")
 );
