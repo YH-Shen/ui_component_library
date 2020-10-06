@@ -26,7 +26,9 @@ a {
     text-decoration: none;
     color: inherit;
 }
-
+pre {
+    font-family: "Fira Code Medium", Consolas, monospace;
+}
 $padding: 16px;
 $main-color: #5594cf;
 $border-color: #eeeeee;
@@ -85,4 +87,7 @@ body {
     color: $regular-text;
     padding: 16px 0;
     border: 1px solid $border-color;
+}
+.component-example {
+    padding: 16px 0;
 }
