@@ -23,7 +23,7 @@
         "esModuleInterop": true,
         "noUnusedLocals": true
     },
-    "include": ["lib/types/custom.d.ts", "lib/**/*"],
+    "include": ["lib/types/custom.d.ts", "lib/**/*", "demo.tsx"],
     "exclude": [
         "node_modules",
         "build",

@@ -2,8 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 // import Icon from './lib/icon/icon';
 
-import { HashRouter as Router, Route, Link } from "react-router-dom";
-import IconExample from "./lib/icon/icon.example";
+import {
+    HashRouter as Router,
+    Route,
+    NavLink,
+} from "react-router-dom";
+// import IconExample from "./lib/icon/icon.example";
+import IconDemo from "./lib/icon/icon.demo";
+
 import ButtonExample from "./lib/button.example";
 import DialogExample from "./lib/dialog/dialog.example";
 import LayoutExample from "./lib/layout/layout.example";
@@ -16,10 +22,10 @@ import {
 } from "./lib/layout/layout";
 import "./example.scss";
 import logo from "./logo_name.png";
-// import * as logo from "./logo_image.svg";
 
-// const logo = require("./logo.png");
-console.log(logo);
+const x = require("!!raw-loader!./lib/icon/icon.example.tsx");
+console.log(x.default);
+
 ReactDOM.render(
     <Router>
         <Layout className="site-page" style={{}}>
@@ -35,24 +41,21 @@ ReactDOM.render(
                     <h2>Component</h2>
                     <ul>
                         <li>
-                            <Link to="/icon">Icon</Link>
+                            <NavLink to="/icon">Icon</NavLink>
                         </li>
                         <li>
-                            <Link to="/button">Button</Link>
+                            <NavLink to="/button">Button</NavLink>
                         </li>
                         <li>
-                            <Link to="/dialog">Dialog</Link>
+                            <NavLink to="/dialog">Dialog</NavLink>
                         </li>
                         <li>
-                            <Link to="/layout">Layout</Link>
+                            <NavLink to="/layout">Layout</NavLink>
                         </li>
                     </ul>
                 </Aside>
                 <Content className="site-main">
-                    <Route
-                        path="/icon"
-                        component={IconExample}
-                    ></Route>
+                    <Route path="/icon" component={IconDemo}></Route>
                     <Route
                         path="/button"
                         component={ButtonExample}
