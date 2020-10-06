@@ -9,6 +9,11 @@
 * ::before {
     box-sizing: border-box;
 }
+ul,
+ol {
+    list-style: none;
+}
+
 h1,
 h2,
 h3,
@@ -17,5 +22,56 @@ h5,
 h6 {
     font-weight: normal;
 }
-.page {
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+$padding: 16px;
+$main-color: #5594cf;
+$border-color: #eeeeee;
+$primary-text: #303133;
+$regular-text: #606266;
+$secondary-text: #909399;
+
+.site-page {
+    background-color: #ffffff;
+}
+.site-main {
+    padding-top: 16px;
+}
+.site-header {
+    background-color: $border-color;
+    padding: 8px 0;
+    .logo {
+        display: flex;
+        align-items: center;
+        padding: 0px $padding;
+    }
+}
+.site-aside {
+    border-right: 1px solid $border-color;
+    margin-right: 16px;
+    h2 {
+        padding: $padding;
+        font-size: 18px;
+        color: $primary-text;
+    }
+    ul {
+        padding: 0 $padding;
+        min-width: 12em;
+    }
+    ul > li {
+        padding: 8px 0;
+        a {
+            color: $regular-text;
+        }
+    }
+}
+.site-footer {
+    text-align: center;
+    font-size: 12px;
+    color: $regular-text;
+    padding: 16px 0;
+    border: 1px solid $border-color;
 }

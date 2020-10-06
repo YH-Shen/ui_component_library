@@ -22,14 +22,14 @@ import logo from "./logo_name.png";
 console.log(logo);
 ReactDOM.render(
     <Router>
-        <Layout className="page" style={{ border: "1px solid blue" }}>
-            <Header style={{ border: "1px solid purple" }}>
+        <Layout className="site-page" style={{}}>
+            <Header className="site-header" style={{}}>
                 <div className="logo">
-                    <img src={logo} alt="" />
+                    <img src={logo} height="50" alt="" />
                 </div>
             </Header>
             <Layout>
-                <Aside style={{ border: "1px solid pink" }}>
+                <Aside className="site-aside" style={{}}>
                     <h2>Introduction</h2>
 
                     <h2>Component</h2>
@@ -48,7 +48,7 @@ ReactDOM.render(
                         </li>
                     </ul>
                 </Aside>
-                <Content>
+                <Content className="site-main">
                     <Route
                         path="/icon"
                         component={IconExample}
@@ -67,8 +67,8 @@ ReactDOM.render(
                     ></Route>
                 </Content>
             </Layout>
-            <Footer style={{ border: "1px solid black" }}>
-                Footer
+            <Footer className="site-footer" style={{}}>
+                &copy;Yuhui Shen
             </Footer>
         </Layout>
     </Router>,
