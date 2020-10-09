@@ -1,7 +1,7 @@
-import React from 'react';
-import Icon from './icon';
+import React from "react";
+import Icon from "./icon";
 
-const IconExample: React.FunctionComponent = () => {
+const IconExample1: React.FunctionComponent = () => {
     return (
         <div>
             <Icon name="twitter" />
@@ -15,4 +15,4 @@ const IconExample: React.FunctionComponent = () => {
     );
 };
 
-export default IconExample;
+export default IconExample1;

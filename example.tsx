@@ -23,7 +23,7 @@ import {
 import "./example.scss";
 import logo from "./logo_name.png";
 
-const x = require("!!raw-loader!./lib/icon/icon.example.tsx");
+const x = require("!!raw-loader!./lib/icon/icon.example.1.tsx");
 console.log(x.default);
 
 ReactDOM.render(
