@@ -13,6 +13,8 @@ import IconDemo from "./lib/icon/icon.demo";
 import ButtonExample from "./lib/button.example";
 import DialogExample from "./lib/dialog/dialog.example";
 import LayoutExample from "./lib/layout/layout.example";
+import FormExample from "./lib/form/form.example";
+
 import {
     Layout,
     Header,
@@ -52,6 +54,9 @@ ReactDOM.render(
                         <li>
                             <NavLink to="/layout">Layout</NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/form">Form</NavLink>
+                        </li>
                     </ul>
                 </Aside>
                 <Content className="site-main">
@@ -67,6 +72,10 @@ ReactDOM.render(
                     <Route
                         path="/layout"
                         component={LayoutExample}
+                    ></Route>
+                    <Route
+                        path="/form"
+                        component={FormExample}
                     ></Route>
                 </Content>
             </Layout>
