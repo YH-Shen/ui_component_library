@@ -145,11 +145,39 @@ type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | und
    Deconstruct props first:
    const { className, ...rest } = props;
    And then join the pre-written class name with given classname to be the final className. Use "...rest" for the rest of the props attributes.
-      <div className={[sc(), className].join(" ")} {...rest}>
+   <div className={[sc(), className].join(" ")} {...rest}>
 
     But this method is so inconnvienet... Then I improved scopeMaker function to takein the extra classname
 
 2. Used Functional Programming to refactor scopedClassMaker!!!
 3. Used NavLink for the "active" state displayment
 
-############
+############ Component Options
+
+1. General and widely applicable(ie. AntD), but is more complicated in use
+2. Focused and customed(libraries used inside companies): less overall support but more user friendly and customized
+
+############ Controlled and uncontrolled component
+Reccomend forms to use controlled components: useState as only source of truth.
+Principle of React UI component: UI = f(state)
+
+How to get the value of the controlled and uncontrolled input field?
+
+controlled:
+const [name, setName] = useState("syh")
+<input value={name} onChange={(e) => setName(e.target.value)}/ >
+
+uncontrolled:
+
+const refInput = useRef<HTMLInputElement>(null);
+const x = () => {
+conosle.log( refInput.current!.value);
+}
+<input defaultValue={name} ref={refInput} type="text" onBlur={x}/>
+
+############### form difference from AntD
+
+feedback all the value on change:
+
+1. No need to reprocess the data.
+2. Might be slow if there are tons of input, but it's a rare case
