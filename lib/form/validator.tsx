@@ -17,6 +17,11 @@ interface FormErrors {
 function isEmpty(value: any) {
     return value === undefined || value === null || value === "";
 }
+export function noError(errors: any) {
+    // Object.values(errors).filter
+    return Object.keys(errors).length === 0;
+}
+
 const Validator = (formValue: FormValue, rules: FormRules): FormErrors => {
     let errors: any = {};
     const addError = (key: string, message: string) => {

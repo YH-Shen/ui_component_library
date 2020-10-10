@@ -1,0 +1,23 @@
+@import "../helper";
+
+.syhui-input {
+    border: 1px solid #dcdfe6;
+    line-height: 22px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    transition: border-color 250ms;
+    -webkit-transition: border-color 250ms;
+    -moz-transition: border-color 250ms;
+    -ms-transition: border-color 250ms;
+    -o-transition: border-color 250ms;
+
+    &:focus {
+        outline: none;
+        border-color: $main-color;
+        // box-shadow: 0px 0px 0px 1px fade-out($color: $main-color, $amount: 0.5);
+    }
+}

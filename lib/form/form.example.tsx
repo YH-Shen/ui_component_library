@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import Form, { FormValue } from "./form";
-import Validator from "./validator";
+import Validator, { noError } from "./validator";
 
 const FormExample = () => {
     const [formData, setFormData] = useState<FormValue>({
@@ -11,15 +11,21 @@ const FormExample = () => {
         { name: "username", label: "username", input: { type: "text" } },
         { name: "password", label: "password", input: { type: "password" } },
     ]);
+    const [errors, setErrors] = useState({});
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         // axios.post("./signIn", formData).then(success, fail);
         const rules = [
             { key: "username", required: true },
             { key: "username", minLength: 6, maxLength: 16 },
             { key: "username", pattern: /^[A-Za-z0-9]+$/ },
+            { key: "password", required: true },
         ];
         const errors = Validator(formData, rules);
-        console.log(errors);
+        if (noError(errors)) {
+            console.log("no error");
+        }
+        setErrors(errors);
+        // console.log(errors);
     };
     return (
         <div>
@@ -33,6 +39,7 @@ const FormExample = () => {
                         <button>Back</button>
                     </Fragment>
                 }
+                errors={errors}
                 onSubmit={onSubmit}
                 onChange={(newValue) => setFormData(newValue)}
             />
