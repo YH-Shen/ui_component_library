@@ -1,8 +1,8 @@
 import React, { Fragment, useState } from "react";
-import Form from "./form";
+import Form, { FormValue } from "./form";
 
 const FormExample = () => {
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<FormValue>({
         username: "",
         password: "",
     });
@@ -14,18 +14,21 @@ const FormExample = () => {
         console.log(formData);
     };
     return (
-        <Form
-            value={formData}
-            fields={fields}
-            buttons={
-                <Fragment>
-                    <button type="submit">Submit</button>
-                    <button>Back</button>
-                </Fragment>
-            }
-            onSubmit={onSubmit}
-            onChange={(e) => setFormData(e.target.value)}
-        />
+        <div>
+            {JSON.stringify(formData)}
+            <Form
+                value={formData}
+                fields={fields}
+                buttons={
+                    <Fragment>
+                        <button type="submit">Submit</button>
+                        <button>Back</button>
+                    </Fragment>
+                }
+                onSubmit={onSubmit}
+                onChange={(newValue) => setFormData(newValue)}
+            />
+        </div>
     );
 };
 
