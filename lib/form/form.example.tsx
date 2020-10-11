@@ -37,7 +37,9 @@ const FormExample = () => {
                 fields={fields}
                 buttons={
                     <Fragment>
-                        <Button type="submit">Submit</Button>
+                        <Button type="submit" level="primary">
+                            Submit
+                        </Button>
                         <Button>Back</Button>
                     </Fragment>
                 }

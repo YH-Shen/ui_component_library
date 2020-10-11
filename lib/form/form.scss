@@ -1,20 +1,34 @@
+@import "../helper";
 .syhui-form {
-    &-tr {
-        td {
-            text-align: end;
-            padding: 12px 0;
-        }
+    &-table {
+        border-collapse: collapse;
     }
-    &-tr:first-child &-td {
+    &-td {
+        // padding: 16px 0;
         padding-top: 0;
+        padding-bottom: 8px;
+        vertical-align: top;
     }
+    // &-tr:first-child &-td {
+    //     padding-top: 0;
+    // }
     &-tr:last-child &-td {
         padding-bottom: 0;
     }
+
     &-label {
+        line-height: 32px;
         display: inline-block;
     }
     &-td + &-td {
         padding-left: 16px;
+    }
+    &-tr &-td:first-child {
+        text-align: end;
+    }
+    &-error {
+        color: $warning-color;
+        font-size: 0.8em;
+        margin-top: 4px;
     }
 }

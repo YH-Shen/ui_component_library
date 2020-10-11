@@ -14,6 +14,7 @@ interface Props {
     onSubmit: React.FormEventHandler<HTMLFormElement>;
     onChange: (value: FormValue) => void;
     errors: { [key: string]: string[] };
+    errorsDisplayMode?: "first" | "all";
 }
 const Form: React.FunctionComponent<Props> = (props) => {
     const formData = props.value;
@@ -32,7 +33,7 @@ const Form: React.FunctionComponent<Props> = (props) => {
     };
     return (
         <form onSubmit={onSubmit}>
-            <table>
+            <table className="syhui-form-table">
                 <tbody>
                     {props.fields.map((f) => (
                         <tr
@@ -54,20 +55,32 @@ const Form: React.FunctionComponent<Props> = (props) => {
                                     }
                                     // onChange={onInputChange.bind(null, f.name)}
                                 />
-                                <div>{props.errors[f.name]}</div>
+                                <div className="syhui-form-error">
+                                    {props.errors[f.name] ? (
+                                        props.errorsDisplayMode === "first" ? (
+                                            props.errors[f.name][0]
+                                        ) : (
+                                            props.errors[f.name].join(", ")
+                                        )
+                                    ) : (
+                                        <span>&nbsp;</span>
+                                    )}
+                                </div>
                             </td>
                         </tr>
                     ))}
-                    <tr>
-                        <td></td>
-                        <td>
-                            <div>{props.buttons}</div>
-                        </td>
+                    <tr className={classnames("syhui-form-tr")}>
+                        <td className="syhui-form-td" />
+                        <td className="syhui-form-td">{props.buttons}</td>
                     </tr>
                 </tbody>
             </table>
         </form>
     );
+};
+
+Form.defaultProps = {
+    errorsDisplayMode: "first",
 };
 
 export default Form;

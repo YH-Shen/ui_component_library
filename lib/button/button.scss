@@ -1,24 +1,54 @@
 @import "../helper";
 
 .syhui-button {
-    color: $regular-text;
-    border: 1px solid #dcdfe6;
-    background-color: #ffffff;
-    padding: 4 16px;
+    display: inline-block;
+    padding: 4px 16px;
     line-height: 22px;
-    &:hover {
-        color: $main-color;
-        border-color: lighten($main-color, 25%);
-        background-color: lighten($main-color, 38%);
-    }
+    transition: all 250ms;
+    -webkit-transition: all 250ms;
+    -moz-transition: all 250ms;
+    -ms-transition: all 250ms;
+    -o-transition: all 250ms;
+    cursor: pointer;
     &:focus {
         outline: none;
-        background-color: lighten($main-color, 38%);
-        border-color: lighten($main-color, 25%);
     }
-    &:active {
-        outline: none;
-        color: darken($color: $main-color, $amount: 4%);
-        border-color: darken($color: $main-color, $amount: 4%);
+
+    &-default {
+        color: $regular-text;
+        border: 1px solid #dcdfe6;
+        background-color: #ffffff;
+
+        &:hover,
+        &:focus {
+            color: $main-color;
+            border-color: lighten($main-color, 25%);
+            background-color: lighten($main-color, 38%);
+        }
+
+        &:active {
+            outline: none;
+            color: darken($color: $main-color, $amount: 5%);
+            border-color: darken($color: $main-color, $amount: 5%);
+        }
+    }
+    &-primary {
+        color: #ffffff;
+        border: 1px solid $main-color;
+        background-color: $main-color;
+
+        &:hover,
+        &:focus {
+            color: #ffffff;
+            border-color: lighten($main-color, 8%);
+            background-color: lighten($main-color, 8%);
+        }
+
+        &:active {
+            outline: none;
+            color: #ffffff;
+            background-color: darken($color: $main-color, $amount: 5%);
+            border-color: darken($color: $main-color, $amount: 5%);
+        }
     }
 }
