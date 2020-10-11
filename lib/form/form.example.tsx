@@ -29,7 +29,7 @@ const FormExample = () => {
     };
     return (
         <div>
-            {JSON.stringify(formData)}
+            {/* {JSON.stringify(formData)} */}
             <Form
                 value={formData}
                 fields={fields}

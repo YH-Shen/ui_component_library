@@ -1,5 +1,7 @@
 import React, { ReactEventHandler, ReactFragment } from "react";
 import Input from "../input/input";
+import classnames from "../helpers/classnames";
+import "./form.scss";
 
 export interface FormValue {
     [Key: string]: any;
@@ -30,19 +32,27 @@ const Form: React.FunctionComponent<Props> = (props) => {
     };
     return (
         <form onSubmit={onSubmit}>
-            {props.fields.map((f) => (
-                <div key={f.name}>
-                    {f.label}
-                    <Input
-                        type={f.input.type}
-                        value={formData[f.name]}
-                        onChange={(e) => onInputChange(f.name, e.target.value)}
-                        // onChange={onInputChange.bind(null, f.name)}
-                    />
-                    <div>{props.errors[f.name]}</div>
-                </div>
-            ))}
-            <div>{props.buttons}</div>
+            <table>
+                {props.fields.map((f) => (
+                    <tr className={classnames("syhui-form-row")} key={f.name}>
+                        <td>
+                            <span className="syhui-form-label">{f.label}</span>
+                        </td>
+                        <td>
+                            <Input
+                                type={f.input.type}
+                                value={formData[f.name]}
+                                onChange={(e) =>
+                                    onInputChange(f.name, e.target.value)
+                                }
+                                // onChange={onInputChange.bind(null, f.name)}
+                            />
+                            <div>{props.errors[f.name]}</div>
+                        </td>
+                    </tr>
+                ))}
+                <div>{props.buttons}</div>
+            </table>
         </form>
     );
 };

@@ -28,7 +28,7 @@ ReactDOM.render(
             </Header>
             <Layout>
                 <Aside className="site-aside" style={{}}>
-                    <h2>Introduction</h2>
+                    {/* <h2>Introduction</h2> */}
 
                     <h2>Component</h2>
                     <ul>

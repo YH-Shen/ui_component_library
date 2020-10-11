@@ -20,4 +20,8 @@
         border-color: $main-color;
         // box-shadow: 0px 0px 0px 1px fade-out($color: $main-color, $amount: 0.5);
     }
+
+    &:hover {
+        border-color: #c0c4cc;
+    }
 }
