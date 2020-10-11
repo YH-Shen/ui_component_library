@@ -1,0 +1,24 @@
+@import "../helper";
+
+.syhui-button {
+    color: $regular-text;
+    border: 1px solid #dcdfe6;
+    background-color: #ffffff;
+    padding: 4 16px;
+    line-height: 22px;
+    &:hover {
+        color: $main-color;
+        border-color: lighten($main-color, 25%);
+        background-color: lighten($main-color, 38%);
+    }
+    &:focus {
+        outline: none;
+        background-color: lighten($main-color, 38%);
+        border-color: lighten($main-color, 25%);
+    }
+    &:active {
+        outline: none;
+        color: darken($color: $main-color, $amount: 4%);
+        border-color: darken($color: $main-color, $amount: 4%);
+    }
+}

@@ -1,5 +1,7 @@
 import React, { Fragment, useState } from "react";
 import Form, { FormValue } from "./form";
+import Button from "../button/button";
+
 import Validator, { noError } from "./validator";
 
 const FormExample = () => {
@@ -35,8 +37,8 @@ const FormExample = () => {
                 fields={fields}
                 buttons={
                     <Fragment>
-                        <button type="submit">Submit</button>
-                        <button>Back</button>
+                        <Button type="submit">Submit</Button>
+                        <Button>Back</Button>
                     </Fragment>
                 }
                 errors={errors}

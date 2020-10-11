@@ -1,15 +1,20 @@
 .syhui-form {
-    &-row {
-        margin: 24px 0;
-        &:first-child {
-            margin-top: 0;
-        }
-        &:last-child {
-            margin-bottom: 0;
+    &-tr {
+        td {
+            text-align: end;
+            padding: 12px 0;
         }
     }
+    &-tr:first-child &-td {
+        padding-top: 0;
+    }
+    &-tr:last-child &-td {
+        padding-bottom: 0;
+    }
     &-label {
-        // width: 5em;
         display: inline-block;
+    }
+    &-td + &-td {
+        padding-left: 16px;
     }
 }

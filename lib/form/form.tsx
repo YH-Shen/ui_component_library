@@ -33,25 +33,38 @@ const Form: React.FunctionComponent<Props> = (props) => {
     return (
         <form onSubmit={onSubmit}>
             <table>
-                {props.fields.map((f) => (
-                    <tr className={classnames("syhui-form-row")} key={f.name}>
+                <tbody>
+                    {props.fields.map((f) => (
+                        <tr
+                            className={classnames("syhui-form-tr")}
+                            key={f.name}
+                        >
+                            <td className="syhui-form-td">
+                                <span className="syhui-form-label">
+                                    {f.label}
+                                </span>
+                            </td>
+                            <td className="syhui-form-td">
+                                <Input
+                                    className="syhui-form-input"
+                                    type={f.input.type}
+                                    value={formData[f.name]}
+                                    onChange={(e) =>
+                                        onInputChange(f.name, e.target.value)
+                                    }
+                                    // onChange={onInputChange.bind(null, f.name)}
+                                />
+                                <div>{props.errors[f.name]}</div>
+                            </td>
+                        </tr>
+                    ))}
+                    <tr>
+                        <td></td>
                         <td>
-                            <span className="syhui-form-label">{f.label}</span>
-                        </td>
-                        <td>
-                            <Input
-                                type={f.input.type}
-                                value={formData[f.name]}
-                                onChange={(e) =>
-                                    onInputChange(f.name, e.target.value)
-                                }
-                                // onChange={onInputChange.bind(null, f.name)}
-                            />
-                            <div>{props.errors[f.name]}</div>
+                            <div>{props.buttons}</div>
                         </td>
                     </tr>
-                ))}
-                <div>{props.buttons}</div>
+                </tbody>
             </table>
         </form>
     );
