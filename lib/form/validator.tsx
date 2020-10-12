@@ -7,12 +7,16 @@ interface FormRule {
     minLength?: number;
     maxLength?: number;
     pattern?: RegExp;
+    validator?: {
+        name: string;
+        validate: (value: string) => Promise<void>;
+    };
 }
 type FormRules = Array<FormRule>;
 
-interface FormErrors {
-    [Key: string]: string[];
-}
+// interface FormErrors {
+//     [Key: string]: string[];
+// }
 
 function isEmpty(value: any) {
     return value === undefined || value === null || value === "";
@@ -22,9 +26,13 @@ export function noError(errors: any) {
     return Object.keys(errors).length === 0;
 }
 
-const Validator = (formValue: FormValue, rules: FormRules): FormErrors => {
+const Validator = (
+    formValue: FormValue,
+    rules: FormRules,
+    callback: (errors: any) => void
+): void => {
     let errors: any = {};
-    const addError = (key: string, message: string) => {
+    const addError = (key: string, message: string | Promise<any>) => {
         if (errors[key] === undefined) {
             errors[key] = [];
         }
@@ -32,6 +40,12 @@ const Validator = (formValue: FormValue, rules: FormRules): FormErrors => {
     };
     rules.map((rule) => {
         const value = formValue[rule.key];
+        if (rule.validator) {
+            // Customised Validator
+            const promise = rule.validator.validate(value);
+            addError(rule.key, promise);
+        }
+
         if (rule.required && isEmpty(value)) {
             addError(rule.key, "Required");
         }
@@ -52,10 +66,29 @@ const Validator = (formValue: FormValue, rules: FormRules): FormErrors => {
         if (rule.pattern && !rule.pattern.test(value)) {
             addError(rule.key, "Illegal Formate");
         }
-        console.log(rule);
+        // console.log(rule);
     });
-    console.log("errors");
-    return errors;
+    Promise.all(flat(Object.values(errors))).then(
+        () => {
+            callback(errors);
+        },
+        () => {
+            callback(errors);
+        }
+    );
+    // console.log("errors");
 };
 
 export default Validator;
+
+function flat(array: Array<any>) {
+    const result = [];
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] instanceof Array) {
+            result.push(...array[i]);
+        } else {
+            result.push(array[i]);
+        }
+    }
+    return result;
+}

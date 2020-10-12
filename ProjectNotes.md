@@ -113,6 +113,9 @@ div.remove();
 re-render the component to change the attribute: visible. Cloned the component and then overwrite the property.
 there was an extra div to remove: remove the events attached onto the div first with "ReactDOM.unmountComponentAtNode()". And then remove the div.
 
+form validation
+Asychornous validation with promise.all
+
 ########## npm version
 
 major.minor.patch
@@ -145,7 +148,7 @@ type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | und
    Deconstruct props first:
    const { className, ...rest } = props;
    And then join the pre-written class name with given classname to be the final className. Use "...rest" for the rest of the props attributes.
-   <div className={[sc(), className].join(" ")} {...rest}>
+    <div className={[sc(), className].join(" ")} {...rest}>
 
     But this method is so inconnvienet... Then I improved scopeMaker function to takein the extra classname
 
