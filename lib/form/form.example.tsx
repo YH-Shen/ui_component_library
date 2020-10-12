@@ -28,6 +28,11 @@ const FormExample = () => {
     const [fields] = useState([
         { name: "username", label: "username", input: { type: "text" } },
         { name: "password", label: "password", input: { type: "password" } },
+        // components must supports "value" and "onChange"
+        // { name: "image", label: "avatar", input: { type: "image" } },
+        // { name: "image2", label: "avatar2", input: () => {
+        // return <XXX> </XXX>
+        // } },
     ]);
     const [errors, setErrors] = useState({});
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {

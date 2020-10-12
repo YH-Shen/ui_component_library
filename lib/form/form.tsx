@@ -1,3 +1,9 @@
+/*
+ *   TODO:
+ *   1. Support child text editting (child form)
+ *   2. Support more types / customised input
+ *   3. Support mobile end
+ */
 import React, { ReactEventHandler, ReactFragment } from "react";
 import Input from "../input/input";
 import classnames from "../helpers/classnames";
@@ -60,6 +66,7 @@ const Form: React.FunctionComponent<Props> = (props) => {
                                 </span>
                             </td>
                             <td className="syhui-form-td">
+                                {/* {f.input.type !== "image" ? "the following code" : <ImageUploader/>} */}
                                 <Input
                                     className="syhui-form-input"
                                     type={f.input.type}
