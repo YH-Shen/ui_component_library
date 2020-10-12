@@ -15,6 +15,7 @@ interface Props {
     onChange: (value: FormValue) => void;
     errors: { [key: string]: string[] };
     errorsDisplayMode?: "first" | "all";
+    transformError?: (message: string) => string;
 }
 const Form: React.FunctionComponent<Props> = (props) => {
     const formData = props.value;
@@ -30,6 +31,19 @@ const Form: React.FunctionComponent<Props> = (props) => {
         // console.log(name, e.target.value);
         const newFormValue = { ...formData, [name]: value };
         props.onChange(newFormValue);
+    };
+
+    const transformError = (message: string) => {
+        const map: any = {
+            required: "Required field",
+            minLength: "Too Short. Minimum Length: 6",
+            maxLength: "Too Long. Maximum Length: 16",
+        };
+        return (
+            (props.transformError && props.transformError(message)) ||
+            map[message] ||
+            "Unknown Error"
+        );
     };
     return (
         <form onSubmit={onSubmit}>
@@ -58,9 +72,13 @@ const Form: React.FunctionComponent<Props> = (props) => {
                                 <div className="syhui-form-error">
                                     {props.errors[f.name] ? (
                                         props.errorsDisplayMode === "first" ? (
-                                            props.errors[f.name][0]
+                                            transformError!(
+                                                props.errors[f.name][0]
+                                            )
                                         ) : (
-                                            props.errors[f.name].join(", ")
+                                            props.errors[f.name]
+                                                .map(transformError!)
+                                                .join(", ")
                                         )
                                     ) : (
                                         <span>&nbsp;</span>

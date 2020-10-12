@@ -49,54 +49,47 @@ const Validator = (
         if (rule.validator) {
             // Customised Validator
             const promise = rule.validator.validate(value);
-            addError(rule.key, { message: "username already exists", promise });
+            addError(rule.key, { message: rule.validator.name, promise });
         }
 
         if (rule.required && isEmpty(value)) {
-            addError(rule.key, { message: "Required" });
+            addError(rule.key, { message: "required" });
         }
         if (
             rule.minLength &&
             !isEmpty(value) &&
             value.length < rule.minLength
         ) {
-            addError(rule.key, { message: "Too short. Min length: 6" });
+            addError(rule.key, { message: "minLength" });
         }
         if (
             rule.maxLength &&
             !isEmpty(value) &&
             value.length > rule.maxLength
         ) {
-            addError(rule.key, { message: "Too long. Max length: 16" });
+            addError(rule.key, { message: "maxLength" });
         }
         if (rule.pattern && !rule.pattern.test(value)) {
-            addError(rule.key, { message: "Illegal Formate" });
+            addError(rule.key, { message: "pattern" });
         }
         // console.log(rule);
     });
     const promiseList = flat(Object.values(errors))
         .filter((item) => item.promise)
         .map((item) => item.promise);
-    Promise.all(promiseList).then(
-        () => {
-            const newErrors = fromEntries(
+
+    const x = () => {
+        callback(
+            fromEntries(
                 Object.keys(errors).map<[string, string[]]>((key) => [
                     key,
                     errors[key].map((item: OneError) => item.message),
                 ])
-            );
-            callback(newErrors);
-        },
-        () => {
-            const newErrors = fromEntries(
-                Object.keys(errors).map<[string, string[]]>((key) => [
-                    key,
-                    errors[key].map((item: OneError) => item.message),
-                ])
-            );
-            callback(newErrors);
-        }
-    );
+            )
+        );
+    };
+
+    Promise.all(promiseList).then(x, x);
     // console.log("errors");
 };
 

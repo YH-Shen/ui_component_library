@@ -51,18 +51,24 @@ const FormExample = () => {
             { key: "password", required: true },
         ];
         Validator(formData, rules, (errors) => {
-            console.log(errors);
             if (noError(errors)) {
                 console.log("no error");
             }
             setErrors(errors);
         });
+    };
 
-        // console.log(errors);
+    const transformError = (message: string) => {
+        const map: any = {
+            unique: "This username already exists",
+            required: "Required field",
+            minLength: "Too Short. Minimum Length: 6",
+            maxLength: "Too Long. Maximum Length: 16",
+        };
+        return map[message];
     };
     return (
         <div>
-            {/* {JSON.stringify(formData)} */}
             <Form
                 value={formData}
                 fields={fields}
@@ -75,6 +81,7 @@ const FormExample = () => {
                     </Fragment>
                 }
                 errors={errors}
+                transformError={transformError}
                 onSubmit={onSubmit}
                 onChange={(newValue) => setFormData(newValue)}
             />
