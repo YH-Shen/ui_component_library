@@ -13,9 +13,9 @@ const checkUserName = (
     setTimeout(() => {
         console.log("now I know if username already exists");
         if (usernames.indexOf(username) >= 0) {
-            success();
-        } else {
             fail();
+        } else {
+            success();
         }
     }, 1000);
 };
@@ -35,25 +35,23 @@ const FormExample = () => {
         // } },
     ]);
     const [errors, setErrors] = useState({});
+    const validator = (username: string) => {
+        return new Promise<string>((resolve, reject) => {
+            checkUserName(username, resolve, () => reject("unique"));
+        });
+    };
+
     const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         // axios.post("./signIn", formData).then(success, fail);
         const rules = [
             { key: "username", required: true },
             { key: "username", minLength: 6, maxLength: 16 },
-            {
-                key: "username",
-                validator: {
-                    name: "unique",
-                    validate(username: string) {
-                        console.log("Validator has been called");
-                        return new Promise<void>((resolve, reject) => {
-                            checkUserName(username, resolve, reject);
-                        });
-                    },
-                },
-            },
+            { key: "username", validator },
+            { key: "username", validator },
             { key: "username", pattern: /^[A-Za-z0-9]+$/ },
             { key: "password", required: true },
+            { key: "password", validator },
+            { key: "password", validator },
         ];
         Validator(formData, rules, (errors) => {
             if (noError(errors)) {
