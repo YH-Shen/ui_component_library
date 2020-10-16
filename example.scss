@@ -28,6 +28,7 @@ a {
 }
 pre {
     font-family: "Fira Code Medium", Consolas, monospace;
+    font-size: 14px;
 }
 $padding: 16px;
 $main-color: #5594cf;
@@ -45,6 +46,20 @@ body {
 }
 .site-main {
     padding-top: 16px;
+    padding-right: 100px;
+}
+.site-main > h2 {
+    margin-bottom: 25px;
+    color: $primary-text;
+}
+.site-main > h3 {
+    margin: 55px 0 20px;
+    color: $primary-text;
+}
+.site-main > p {
+    line-height: 1.5em;
+    color: $regular-text;
+    margin: 1em 0;
 }
 .site-header {
     background-color: $border-color;
@@ -88,7 +103,4 @@ body {
     color: $regular-text;
     padding: 16px 0;
     border: 1px solid $border-color;
-}
-.component-example {
-    padding: 16px 0;
 }

@@ -6,7 +6,7 @@ import { HashRouter as Router, Route, NavLink } from "react-router-dom";
 // import IconExample from "./lib/icon/icon.example";
 import IconDemo from "./lib/icon/icon.demo";
 
-import ButtonExample from "./lib/button.example";
+import ButtonExample from "./lib/button/button.example";
 import DialogExample from "./lib/dialog/dialog.example";
 import LayoutExample from "./lib/layout/layout.example";
 import FormExample from "./lib/form/form.example";

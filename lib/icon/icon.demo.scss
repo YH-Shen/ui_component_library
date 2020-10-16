@@ -1,0 +1,9 @@
+@import "../helper";
+
+.demo-block {
+    svg {
+        margin: 10px;
+        color: $regular-text;
+    }
+    font-size: 1.5em;
+}
