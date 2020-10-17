@@ -1,14 +1,24 @@
 @import "./lib/helper";
 
+$code-block-background: #2a2734;
+$padding: 24px;
+
 .demo-block {
     @include default-border-style(#eee);
     border-radius: 2px 2px 0 0;
     border-bottom: none;
-    padding: 24px;
+    padding: $padding;
     -webkit-border-radius: 2px 2px 0 0;
     -moz-border-radius: 2px 2px 0 0;
     -ms-border-radius: 2px 2px 0 0;
     -o-border-radius: 2px 2px 0 0;
+}
+pre {
+    font-family: "Fira Code Medium", Consolas, monospace;
+    font-size: $regular-text-size;
+}
+pre pre {
+    padding: calc(#{$padding} + 10px) 0 0 calc(#{$padding} + 10px);
 }
 .code-block-control {
     height: 40px;
@@ -85,7 +95,7 @@ div.code-block-control:hover {
     .expand-control {
         span,
         svg {
-            color: $secondary-text;
+            color: $main-color;
         }
     }
 }
