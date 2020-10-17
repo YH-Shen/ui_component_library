@@ -3,7 +3,14 @@ import classnames from "../helpers/classnames";
 import "./button.scss";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
-    level?: "primary" | "danger" | "default";
+    level?:
+        | "primary"
+        | "success"
+        | "info"
+        | "warning"
+        | "danger"
+        | "default"
+        | "text";
 }
 
 const Button: React.FunctionComponent<Props> = (props) => {
