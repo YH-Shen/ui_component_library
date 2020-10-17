@@ -37,6 +37,7 @@ $border-color: #eeeeee;
 $primary-text: #303133;
 $regular-text: #606266;
 $secondary-text: #909399;
+$regular-text-size: 16px;
 body {
     // font-size: 16px;
 }
@@ -62,7 +63,7 @@ body {
     line-height: 1.5em;
     color: $regular-text;
     margin: 1em 0;
-    font-size: 16px;
+    font-size: $regular-text-size;
 }
 .site-header {
     // background-color: $border-color;
@@ -79,9 +80,10 @@ body {
     border-right: 1px solid $border-color;
     margin-right: 16px;
     h2 {
-        padding: $padding;
+        padding: 1em $padding;
         font-size: 18px;
         color: $primary-text;
+        font-weight: bold;
     }
     ul {
         min-width: 12em;
@@ -90,6 +92,7 @@ body {
         a {
             display: block;
             padding: 8px $padding;
+            font-size: $regular-text-size;
 
             color: $regular-text;
             &:hover {
@@ -98,6 +101,7 @@ body {
             &.active {
                 color: $main-color;
                 background-color: #d9ecff;
+                // border-right: 3px solid $main-color;
             }
         }
     }
