@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 * ::after {
     box-sizing: border-box;
@@ -30,7 +31,7 @@ pre {
     font-family: "Fira Code Medium", Consolas, monospace;
     font-size: 14px;
 }
-$padding: 16px;
+$padding: 4vw;
 $main-color: #5594cf;
 $border-color: #eeeeee;
 $primary-text: #303133;
@@ -43,6 +44,7 @@ body {
 .site-page {
     background-color: #ffffff;
     min-height: 100vh;
+    // margin: 0 0 0 10vw;
 }
 .site-main {
     padding-top: 16px;
@@ -60,10 +62,13 @@ body {
     line-height: 1.5em;
     color: $regular-text;
     margin: 1em 0;
+    font-size: 16px;
 }
 .site-header {
-    background-color: $border-color;
-    padding: 8px 0;
+    // background-color: $border-color;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid $border-color;
+    box-shadow: 0 2px 8px #f0f1f2;
     .logo {
         display: flex;
         align-items: center;
