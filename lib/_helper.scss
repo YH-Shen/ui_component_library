@@ -5,6 +5,15 @@ $primary-text: #303133;
 $regular-text: #606266;
 $secondary-text: #909399;
 $border-color: #ebebeb;
+$button-border-color: #dcdfe6;
+
+$primary-color: $main-color;
+$success-color: #67c23a;
+$info-color: #909399;
+$warning-color: #e6a23c;
+$danger-color: #f56c6c;
+// $decent-black: #606266;
+// $decent-gray: #2c3e50;
 
 $regular-text-size: 16px;
 //  #1890ff;
@@ -43,4 +52,69 @@ $regular-text-size: 16px;
         0 2px 4px 0 rgba(232, 237, 250, 0.5);
     box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6),
         0 2px 4px 0 rgba(232, 237, 250, 0.5);
+}
+@mixin clear-default-appearance {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}
+
+@mixin clear-default-appearance-all {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+@function get-bkg-color-hover($--baseColor) {
+    @if ($--baseColor != #fff) {
+        // @return transparentize($--baseColor, 0.2);
+        @return lighten($--baseColor, 8%);
+    } @else {
+        // @return transparentize($primary-color, 0.8);
+        @return lighten($primary-color, 38%);
+    }
+}
+
+@mixin set-bkg-color-with-hover($--baseColor) {
+    background-color: $--baseColor;
+
+    &:hover:not([disabled]),
+    &:focus:not([disabled]) {
+        background-color: get-bkg-color-hover($--baseColor);
+        @if ($--baseColor == #fff) {
+            // border-color: transparentize($main-color, 0.4);
+            border-color: lighten($main-color, 25%);
+        } @else {
+            // border-color: transparentize($--baseColor, 0.8);
+            border-color: lighten($--baseColor, 8%);
+        }
+    }
+}
+
+@function get-color-active($--baseColor) {
+    @if ($--baseColor != #fff) {
+        @return #ffffff;
+    } @else {
+        @return darken($color: $main-color, $amount: 5%);
+    }
+}
+
+@mixin set-color-with-active($--baseColor) {
+    background-color: $--baseColor;
+
+    &:active:not([disabled]) {
+        outline: none;
+        color: get-color-active($--baseColor);
+        @if ($--baseColor == #fff) {
+            border-color: darken($color: $main-color, $amount: 5%);
+        } @else {
+            background-color: darken($color: $--baseColor, $amount: 5%);
+            border-color: darken($color: $--baseColor, $amount: 5%);
+        }
+    }
 }

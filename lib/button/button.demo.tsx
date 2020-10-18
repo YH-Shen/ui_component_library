@@ -6,10 +6,9 @@ import Demo from "../../demo";
 const ButtonDemo = () => {
     return (
         <Fragment>
-            <h2>Icon</h2>
-            <p>SYHUI provides a set of common icons.</p>
+            <h2>Button</h2>
+            <p>Commonly used button.</p>
             <h3>Basic Usage</h3>
-            <p>Just assign the icon name to the "name" attribute.</p>
             <Demo code={require("!!raw-loader!./button.example.1.tsx").default}>
                 <ButtonExample1 />
             </Demo>

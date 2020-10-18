@@ -1,9 +1,54 @@
 @import "../helper";
 
+@mixin set-button-styling($--button-theme-color) {
+    @include set-bkg-color-with-hover($--button-theme-color);
+    @include set-color-with-active($--button-theme-color);
+    @if ($--button-theme-color == #ffffff) {
+        @include default-border-style($button-border-color);
+        color: $regular-text;
+    } @else {
+        @include default-border-style($--button-theme-color);
+        color: #ffffff;
+    }
+    color: set-text-color($--button-theme-color);
+    &.is-plain {
+        background: transparentize($--button-theme-color, 0.8);
+        @if ($--button-theme-color != #ffffff) {
+            color: $--button-theme-color;
+            @include default-border-style($--button-theme-color);
+            border-color: transparentize($--button-theme-color, 0.4);
+        }
+        &:hover:not([disabled]) {
+            background-color: $--button-theme-color;
+            @if ($--button-theme-color != #ffffff) {
+                color: white;
+            }
+        }
+    }
+    &.is-round {
+        border-radius: 30px;
+    }
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+    &-text {
+        border: none;
+        color: $primary-color;
+        &:hover:not([disabled]) {
+            background-color: #fff;
+            color: transparentize($color: $primary-color, $amount: 0.3);
+        }
+    }
+}
+
 .syhui-button {
     display: inline-block;
     padding: 6px 16px;
-    line-height: 22px;
+    line-height: 1;
+    //line-height: 22px;
+    white-space: nowrap;
+    // color: $regular-text;
     height: auto;
     transition: all 250ms;
     -webkit-transition: all 250ms;
@@ -11,45 +56,124 @@
     -ms-transition: all 250ms;
     -o-transition: all 250ms;
     cursor: pointer;
+    @include clear-default-appearance-all;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0;
+    margin-left: 10px;
+    padding: 12px 22px;
+    font-size: $regular-text-size;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+
+    @include set-button-styling(#fff);
+    &-primary {
+        @include set-button-styling($main-color);
+    }
+    &-success {
+        @include set-button-styling($success-color);
+    }
+    &-info {
+        @include set-button-styling($info-color);
+    }
+    &-warning {
+        @include set-button-styling($warning-color);
+    }
+    &-danger {
+        @include set-button-styling($danger-color);
+    }
+
     &:focus {
         outline: none;
     }
 
-    &-default {
-        color: $regular-text;
-        border: 1px solid #dcdfe6;
-        background-color: #ffffff;
+    // &-default {
+    //     color: $regular-text;
+    //     border: 1px solid #dcdfe6;
+    //     background-color: #ffffff;
 
-        &:hover,
-        &:focus {
-            color: $main-color;
-            border-color: lighten($main-color, 25%);
-            background-color: lighten($main-color, 38%);
-        }
+    //     &:hover,
+    //     &:focus {
+    //         color: $main-color;
+    //         border-color: lighten($main-color, 25%);
+    //         background-color: lighten($main-color, 38%);
+    //     }
 
-        &:active {
-            outline: none;
-            color: darken($color: $main-color, $amount: 5%);
-            border-color: darken($color: $main-color, $amount: 5%);
-        }
-    }
-    &-primary {
-        color: #ffffff;
-        border: 1px solid $main-color;
-        background-color: $main-color;
+    //     &:active {
+    //         outline: none;
+    //         color: darken($color: $main-color, $amount: 5%);
+    //         border-color: darken($color: $main-color, $amount: 5%);
+    //     }
+    // }
+    // &-primary {
+    //     color: #ffffff;
+    //     border: 1px solid $main-color;
+    //     background-color: $main-color;
 
-        &:hover,
-        &:focus {
-            color: #ffffff;
-            border-color: lighten($main-color, 8%);
-            background-color: lighten($main-color, 8%);
-        }
+    //     &:hover,
+    //     &:focus {
+    //         color: #ffffff;
+    //         border-color: lighten($main-color, 8%);
+    //         background-color: lighten($main-color, 8%);
+    //     }
 
-        &:active {
-            outline: none;
-            color: #ffffff;
-            background-color: darken($color: $main-color, $amount: 5%);
-            border-color: darken($color: $main-color, $amount: 5%);
-        }
-    }
+    //     &:active {
+    //         outline: none;
+    //         color: #ffffff;
+    //         background-color: darken($color: $main-color, $amount: 5%);
+    //         border-color: darken($color: $main-color, $amount: 5%);
+    //     }
+    // }
 }
+
+// =====================================================================
+// =====================================================================
+// =====================================================================
+// =====================================================================
+// =====================================================================
+
+// .dc-button {
+//
+//     @include set-button-styling(#fff);
+//
+//     &--medium {
+//         width: 76px;
+//         height: 34px;
+//         padding: 10px 16px;
+//     }
+//     &--small {
+//         width: 55px;
+//         height: 30px;
+//         padding: 6px 13px;
+//         font-size: 10px;
+//     }
+//     &--mini {
+//         width: 45px;
+//         height: 25px;
+//         padding: 4px 10px;
+//         font-size: 10px;
+//     }
+// }
+// .is-circle {
+//     width: 40px;
+//     height: 40px;
+//     border-radius: 50%;
+//     padding: 12px;
+// }
+// .dc-icon-loading {
+//     @include rotate-forever;
+// }
+// .dc-icon-loading ~ span {
+//     margin-left: 5px;
+// }
+
+// .randomtest {
+//     border-radius: 4px;
+//     -webkit-border-radius: 4px;
+//     -moz-border-radius: 4px;
+//     -ms-border-radius: 4px;
+//     -o-border-radius: 4px;
+// }
