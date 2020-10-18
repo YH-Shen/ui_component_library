@@ -11,16 +11,18 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
         | "danger"
         | "default"
         | "text";
+    plain?: boolean;
 }
 
 const Button: React.FunctionComponent<Props> = (props) => {
-    const { className, children, level, ...restProps } = props;
+    const { className, children, level, plain, ...restProps } = props;
 
     return (
         <button
             className={classnames(
                 "syhui-button",
                 `syhui-button-${level}`,
+                `${plain ? "is-plain" : ""}`,
                 className
             )}
             {...restProps}

@@ -111,10 +111,10 @@ $regular-text-size: 16px;
         outline: none;
         color: get-color-active($--baseColor);
         @if ($--baseColor == #fff) {
-            border-color: darken($color: $main-color, $amount: 5%);
+            border-color: darken($color: $main-color, $amount: 7%);
         } @else {
-            background-color: darken($color: $--baseColor, $amount: 5%);
-            border-color: darken($color: $--baseColor, $amount: 5%);
+            background-color: darken($color: $--baseColor, $amount: 7%);
+            border-color: darken($color: $--baseColor, $amount: 7%);
         }
     }
 }

@@ -18,10 +18,32 @@
             @include default-border-style($--button-theme-color);
             border-color: transparentize($--button-theme-color, 0.4);
         }
-        &:hover:not([disabled]) {
+        &:hover:not([disabled]),
+        &:focus:not([disabled]) {
             background-color: $--button-theme-color;
             @if ($--button-theme-color != #ffffff) {
                 color: white;
+                border-color: $--button-theme-color;
+            } @else {
+                color: $main-color;
+                border-color: $main-color;
+            }
+        }
+        &:active:not([disabled]) {
+            outline: none;
+
+            @if ($--button-theme-color == #ffffff) {
+                border-color: darken($color: $main-color, $amount: 7%);
+                color: darken($color: $main-color, $amount: 7%);
+            } @else {
+                background-color: darken(
+                    $color: $--button-theme-color,
+                    $amount: 7%
+                );
+                border-color: darken(
+                    $color: $--button-theme-color,
+                    $amount: 7%
+                );
             }
         }
     }
