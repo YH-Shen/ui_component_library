@@ -48,7 +48,11 @@
         }
     }
     &.is-round {
-        border-radius: 30px;
+        border-radius: 19px;
+        -webkit-border-radius: 19px;
+        -moz-border-radius: 19px;
+        -ms-border-radius: 19px;
+        -o-border-radius: 19px;
     }
     &:disabled {
         cursor: not-allowed;

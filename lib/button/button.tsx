@@ -12,10 +12,24 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
         | "default"
         | "text";
     plain?: boolean;
+    round?: boolean;
+    circle?: boolean;
+    loading?: boolean;
+    disabled?: boolean;
 }
 
 const Button: React.FunctionComponent<Props> = (props) => {
-    const { className, children, level, plain, ...restProps } = props;
+    const {
+        className,
+        children,
+        level,
+        plain,
+        round,
+        circle,
+        loading,
+        disabled,
+        ...restProps
+    } = props;
 
     return (
         <button
@@ -23,6 +37,10 @@ const Button: React.FunctionComponent<Props> = (props) => {
                 "syhui-button",
                 `syhui-button-${level}`,
                 `${plain ? "is-plain" : ""}`,
+                `${round ? "is-round" : ""}`,
+                `${circle ? "is-circle" : ""}`,
+                `${loading ? "is-loading" : ""}`,
+                `${disabled ? "is-disabled" : ""}`,
                 className
             )}
             {...restProps}

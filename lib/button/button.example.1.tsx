@@ -32,6 +32,26 @@ const ButtonExample1: React.FunctionComponent = () => {
                     Danger
                 </Button>
             </div>
+            <div>
+                <Button level="default" round>
+                    Default
+                </Button>
+                <Button level="primary" round>
+                    Primary
+                </Button>
+                <Button level="success" round>
+                    Success
+                </Button>
+                <Button level="info" round>
+                    Info
+                </Button>
+                <Button level="warning" round>
+                    Warning
+                </Button>
+                <Button level="danger" round>
+                    Danger
+                </Button>
+            </div>
         </Fragment>
     );
 };
