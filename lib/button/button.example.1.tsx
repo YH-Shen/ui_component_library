@@ -1,3 +1,12 @@
+/// TODO
+//* Add icon buttons
+//* Add text buttons
+//* Add disabled buttons
+//* Add loading buttons
+//* Add sized buttons
+//* Maybe add button groups
+///
+
 import React, { Fragment } from "react";
 import Button from "../button/button";
 
