@@ -17,21 +17,11 @@ const ButtonExample2: React.FunctionComponent = () => {
             {/* Disabled Plain Buttons==================================== */}
             <div className="demo-button-row">
                 <Button level="default" plain disabled>Plain</Button>
-                <Button level="primary" plain>
-                    Primary
-                </Button>
-                <Button level="success" plain>
-                    Success
-                </Button>
-                <Button level="info" plain>
-                    Info
-                </Button>
-                <Button level="warning" plain>
-                    Warning
-                </Button>
-                <Button level="danger" plain>
-                    Danger
-                </Button>
+                <Button level="primary" plain disabled>Primary</Button>
+                <Button level="success" plain disabled>Success</Button>
+                <Button level="info" plain disabled>Info</Button>
+                <Button level="warning" plain disabled>Warning</Button>
+                <Button level="danger" plain disabled>Danger</Button>
             </div>
 
             
