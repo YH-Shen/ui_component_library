@@ -1,3 +1,8 @@
+/// Todo
+//* Add sized buttons
+//* Add loading buttons
+//* Maybe add button group
+///
 import React, { ButtonHTMLAttributes } from "react";
 import classnames from "../helpers/classnames";
 import Icon from "../icon/icon";
