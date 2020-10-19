@@ -9,8 +9,8 @@ const ButtonExample4: React.FunctionComponent = () => {
                 <Button level="primary" icon="edit" />
                 <Button level="primary" icon="share" />
                 <Button level="primary" icon="delete" />
-                <Button level="primary" icon="search">search</Button>
-                <Button level="primary" icon="upload" />
+                <Button level="primary" icon="search">Search</Button>
+                <Button level="primary" icon="upload" position="right">Upload</Button>
             </div>
         </Fragment>
     );

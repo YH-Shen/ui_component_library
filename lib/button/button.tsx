@@ -52,7 +52,7 @@ const Button: React.FunctionComponent<Props> = (props) => {
                 `${round ? "is-round" : ""}`,
                 `${circle ? "is-circle" : ""}`,
                 `${loading ? "is-loading" : ""}`,
-
+                position,
                 className
             )}
             disabled={disabled}

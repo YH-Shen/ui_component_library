@@ -115,8 +115,29 @@
     &:focus {
         outline: none;
     }
-    &-textContent:not(:first-child) {
-        margin-left: 5px;
+    &.left {
+        > .syhui-icon {
+            // margin-right: 2px;
+            order: 1;
+        }
+        > .syhui-button-textContent {
+            order: 2;
+        }
+        > .syhui-icon + .syhui-button-textContent {
+            margin-left: 5px;
+        }
+    }
+    &.right {
+        > .syhui-icon {
+            // margin-left: 2px;
+            order: 2;
+        }
+        > .syhui-button-textContent {
+            order: 1;
+        }
+        > .syhui-icon + .syhui-button-textContent {
+            margin-right: 5px;
+        }
     }
 }
 .is-circle {
