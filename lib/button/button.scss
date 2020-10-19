@@ -69,7 +69,8 @@
 }
 
 .syhui-button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     padding: 6px 16px;
     line-height: 1;
     //line-height: 22px;
@@ -113,6 +114,9 @@
 
     &:focus {
         outline: none;
+    }
+    &-textContent:not(:first-child) {
+        margin-left: 5px;
     }
 }
 .is-circle {

@@ -59,7 +59,11 @@ const Button: React.FunctionComponent<Props> = (props) => {
             {...restProps}
         >
             {renderIcon()}
-            <span>{children}</span>
+            {children ? (
+                <span className="syhui-button-textContent">{children}</span>
+            ) : (
+                ""
+            )}
         </button>
     );
 };
