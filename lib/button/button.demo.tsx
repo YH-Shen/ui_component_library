@@ -46,7 +46,20 @@ const ButtonDemo = () => {
                 Use icons to add more meaning to Button. You can use icon alone
                 to save some space, or use it with text.
             </p>
-            <Demo code={require("!!raw-loader!./button.example.4.tsx").default}>
+            <Demo
+                code={require("!!raw-loader!./button.example.4.tsx").default}
+                description={
+                    <div className="description">
+                        Use the
+                        <code className="little-code">icon</code>
+                        attribute to add icon. You can find the icon list in
+                        Element icon component. Adding icons to the right side
+                        of the text is achievable with an
+                        <code className="little-code">position</code> attribute.
+                        Custom icons can be used as well.
+                    </div>
+                }
+            >
                 <ButtonExample4 />
             </Demo>
         </Fragment>
