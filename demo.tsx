@@ -6,6 +6,7 @@ import Icon from "./lib/icon/icon";
 
 interface Props {
     code: string;
+    description?: JSX.Element;
 }
 
 const Demo: React.FunctionComponent<Props> = (props) => {
@@ -48,7 +49,9 @@ const Demo: React.FunctionComponent<Props> = (props) => {
             <div className="demo-block">{props.children}</div>
             {/*  */}
             <div className="code-block">
-                <slot name="description-area"></slot>
+                <slot name="description-area">
+                    {codeVisible && props.description && props.description}
+                </slot>
                 <slot name="code-area">
                     <pre>
                         {/* Source Code Display */}
@@ -62,7 +65,6 @@ const Demo: React.FunctionComponent<Props> = (props) => {
             >
                 <div className="expand-control">
                     <Icon name={codeVisible ? "caret-up" : "caret-down"} />
-                    {/* <font-awesome-icon :icon="arrowIconName" size="1x" /> */}
                     <span>{codeVisible ? "Hide" : "Expand"}</span>
                 </div>
                 <button>Try It!</button>

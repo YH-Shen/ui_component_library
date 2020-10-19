@@ -12,12 +12,25 @@ const ButtonDemo = () => {
             <h2>Button</h2>
             <p>Commonly used button.</p>
             <h3>Basic Usage</h3>
-            <Demo code={require("!!raw-loader!./button.example.1.tsx").default}>
+            <Demo
+                code={require("!!raw-loader!./button.example.1.tsx").default}
+                description={
+                    <div className="description">
+                        Use
+                        <code className="little-code">type</code>,
+                        <code className="little-code">plain</code>,
+                        <code className="little-code">round</code> and
+                        <code className="little-code">circle</code> to define
+                        Button's style.
+                    </div>
+                }
+            >
                 <ButtonExample1 />
             </Demo>
             <h3>Disabled Button</h3>
             <p>
-                The "disabled" attribute determines if the button is disabled.
+                The <code className="little-code">disabled</code> attribute
+                determines if the button is disabled.
             </p>
             <Demo code={require("!!raw-loader!./button.example.2.tsx").default}>
                 <ButtonExample2 />

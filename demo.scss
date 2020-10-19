@@ -106,6 +106,7 @@ div.code-block-control:hover {
     align-items: left;
     // height: 0px;
     overflow: hidden;
+    // background-color: #2a2734;
     background-color: transparentize($color: #ccc, $amount: 0.8);
     border: {
         style: solid;

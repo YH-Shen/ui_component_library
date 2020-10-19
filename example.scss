@@ -68,6 +68,12 @@ body {
     color: $regular-text;
     margin: 1em 0;
     font-size: $regular-text-size;
+    .little-code {
+        background-color: transparentize($color: $main-color, $amount: 0.8);
+        border-radius: 2px;
+        padding: 1px 5px;
+        margin: 0 4px;
+    }
 }
 .site-header {
     // background-color: $border-color;
