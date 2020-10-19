@@ -3,7 +3,7 @@ import ButtonExample1 from "./button.example.1";
 import ButtonExample2 from "./button.example.2";
 import ButtonExample3 from "./button.example.3";
 import ButtonExample4 from "./button.example.4";
-import ButtonExample5 from "./button.example.5";
+// import ButtonExample5 from "./button.example.5";
 
 import Demo from "../../demo";
 // import "./icon.demo.scss";
@@ -65,11 +65,87 @@ const ButtonDemo = () => {
                 <ButtonExample4 />
             </Demo>
 
-            <h3>Loading Button</h3>
+            {/* <h3>Loading Button</h3>
             <p>Buttons without border and background.</p>
             <Demo code={require("!!raw-loader!./button.example.5.tsx").default}>
                 <ButtonExample5 />
-            </Demo>
+            </Demo> */}
+            <h3>Attributes</h3>
+
+            <div className="attribute-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                            <th>Accepted Values</th>
+                            <th>Default</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>level</td>
+                            <td>buton type</td>
+                            <td>string</td>
+                            <td>
+                                primary / success / warning / danger / info /
+                                text
+                            </td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>plain</td>
+                            <td>determine whether it's a plain button</td>
+                            <td>boolean</td>
+                            <td>—</td>
+                            <td>false</td>
+                        </tr>
+                        <tr>
+                            <td>round</td>
+                            <td>determine whether it's a round button</td>
+                            <td>boolean</td>
+                            <td>—</td>
+                            <td>false</td>
+                        </tr>
+                        <tr>
+                            <td>circle</td>
+                            <td>determine whether it's a circle button</td>
+                            <td>boolean</td>
+                            <td>—</td>
+                            <td>false</td>
+                        </tr>
+                        <tr>
+                            <td>disabled</td>
+                            <td>disable the button</td>
+                            <td>boolean</td>
+                            <td>—</td>
+                            <td>false</td>
+                        </tr>
+                        <tr>
+                            <td>icon</td>
+                            <td>icon name</td>
+                            <td>string</td>
+                            <td>—</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>autofocus</td>
+                            <td>same as native button's autofocus</td>
+                            <td>boolean</td>
+                            <td>—</td>
+                            <td>false</td>
+                        </tr>
+                        <tr>
+                            <td>native-type</td>
+                            <td>same as native button's type</td>
+                            <td>string</td>
+                            <td>button / submit / reset </td>
+                            <td>button</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </Fragment>
     );
 };
