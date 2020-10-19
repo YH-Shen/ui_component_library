@@ -52,9 +52,10 @@ const Button: React.FunctionComponent<Props> = (props) => {
                 `${round ? "is-round" : ""}`,
                 `${circle ? "is-circle" : ""}`,
                 `${loading ? "is-loading" : ""}`,
-                `${disabled ? "is-disabled" : ""}`,
+
                 className
             )}
+            disabled={disabled}
             {...restProps}
         >
             {renderIcon()}
