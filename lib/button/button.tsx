@@ -1,5 +1,6 @@
 import React, { ButtonHTMLAttributes } from "react";
 import classnames from "../helpers/classnames";
+import Icon from "../icon/icon";
 import "./button.scss";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -16,6 +17,9 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
     circle?: boolean;
     loading?: boolean;
     disabled?: boolean;
+    icon?: string;
+    position?: "left" | "right";
+    size?: "small" | "medium" | "large" | "huge";
 }
 
 const Button: React.FunctionComponent<Props> = (props) => {
@@ -28,9 +32,17 @@ const Button: React.FunctionComponent<Props> = (props) => {
         circle,
         loading,
         disabled,
+        icon,
+        size,
+        position,
         ...restProps
     } = props;
 
+    const renderIcon = () => {
+        // const IconClassName = classnames(componentName, 'icon', [size], { loading })
+        console.log("renderIcon works");
+        return icon && <Icon name={icon} />;
+    };
     return (
         <button
             className={classnames(
@@ -45,13 +57,18 @@ const Button: React.FunctionComponent<Props> = (props) => {
             )}
             {...restProps}
         >
-            {children}
+            {renderIcon()}
+            <span>{children}</span>
         </button>
     );
 };
 
 Button.defaultProps = {
     level: "default",
+    position: "left",
+    // size: 'medium',
+    loading: false,
+    disabled: false,
 };
 
 export default Button;

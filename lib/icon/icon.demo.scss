@@ -6,4 +6,9 @@
         color: $regular-text;
     }
     font-size: 1.5em;
+    button > svg {
+        margin: 0;
+        color: inherit;
+        font-size: 12px;
+    }
 }

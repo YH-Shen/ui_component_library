@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import Button from "../button/button";
 
-const ButtonExample1: React.FunctionComponent = () => {
+const ButtonExample2: React.FunctionComponent = () => {
     return (
         <Fragment>
             {/* Default Buttons==================================== */}
@@ -16,22 +16,46 @@ const ButtonExample1: React.FunctionComponent = () => {
 
             {/* Plain Buttons==================================== */}
             <div className="demo-button-row">
-                <Button level="default" plain>Plain</Button>
-                <Button level="primary" plain>Primary</Button>
-                <Button level="success" plain>Success</Button>
-                <Button level="info" plain>Info</Button>
-                <Button level="warning" plain>Warning</Button>
-                <Button level="danger" plain>Danger</Button>
+                <Button level="default" plain>
+                    Plain
+                </Button>
+                <Button level="primary" plain>
+                    Primary
+                </Button>
+                <Button level="success" plain>
+                    Success
+                </Button>
+                <Button level="info" plain>
+                    Info
+                </Button>
+                <Button level="warning" plain>
+                    Warning
+                </Button>
+                <Button level="danger" plain>
+                    Danger
+                </Button>
             </div>
 
             {/* Round Buttons==================================== */}
             <div className="demo-button-row">
-                <Button level="default" round>Round</Button>
-                <Button level="primary" round>Primary</Button>
-                <Button level="success" round>Success</Button>
-                <Button level="info" round>Info</Button>
-                <Button level="warning" round>Warning</Button>
-                <Button level="danger" round>Danger</Button>
+                <Button level="default" round>
+                    Round
+                </Button>
+                <Button level="primary" round>
+                    Primary
+                </Button>
+                <Button level="success" round>
+                    Success
+                </Button>
+                <Button level="info" round>
+                    Info
+                </Button>
+                <Button level="warning" round>
+                    Warning
+                </Button>
+                <Button level="danger" round>
+                    Danger
+                </Button>
             </div>
 
             {/* Circle Icon Buttons==================================== */}
@@ -47,4 +71,4 @@ const ButtonExample1: React.FunctionComponent = () => {
     );
 };
 
-export default ButtonExample1;
+export default ButtonExample2;

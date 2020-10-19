@@ -4,9 +4,10 @@ import ReactDOM from "react-dom";
 
 import { HashRouter as Router, Route, NavLink } from "react-router-dom";
 // import IconExample from "./lib/icon/icon.example";
+import Intro from "./lib/intro/intro";
 import IconDemo from "./lib/icon/icon.demo";
-
 import ButtonDemo from "./lib/button/button.demo";
+
 import DialogExample from "./lib/dialog/dialog.example";
 import LayoutExample from "./lib/layout/layout.example";
 import FormExample from "./lib/form/form.example";
@@ -29,7 +30,11 @@ ReactDOM.render(
             <Layout>
                 <Aside className="site-aside" style={{}}>
                     {/* <h2>Introduction</h2> */}
-
+                    <ul>
+                        <li className="site-aside-intro">
+                            <NavLink to="/intro">SYHUI</NavLink>
+                        </li>
+                    </ul>
                     <h2>Component</h2>
                     <ul>
                         <li>
@@ -50,6 +55,8 @@ ReactDOM.render(
                     </ul>
                 </Aside>
                 <Content className="site-main">
+                    <Route path="/intro" component={Intro}></Route>
+
                     <Route path="/icon" component={IconDemo}></Route>
                     <Route path="/button" component={ButtonDemo}></Route>
                     <Route path="/dialog" component={DialogExample}></Route>

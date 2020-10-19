@@ -1,5 +1,7 @@
 import React, { Fragment } from "react";
 import ButtonExample1 from "./button.example.1";
+import ButtonExample2 from "./button.example.2";
+
 import Demo from "../../demo";
 // import "./icon.demo.scss";
 
@@ -12,9 +14,10 @@ const ButtonDemo = () => {
             <Demo code={require("!!raw-loader!./button.example.1.tsx").default}>
                 <ButtonExample1 />
             </Demo>
-            {/* <Demo code={require("!!raw-loader!./icon.example.2.tsx").default}>
-                <IconExample2 />
-            </Demo> */}
+            <h3>Disabled Button</h3>
+            <Demo code={require("!!raw-loader!./button.example.2.tsx").default}>
+                <ButtonExample2 />
+            </Demo>
         </Fragment>
     );
 };
