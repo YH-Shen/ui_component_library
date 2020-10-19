@@ -3,6 +3,7 @@ import ButtonExample1 from "./button.example.1";
 import ButtonExample2 from "./button.example.2";
 import ButtonExample3 from "./button.example.3";
 import ButtonExample4 from "./button.example.4";
+import ButtonExample5 from "./button.example.5";
 
 import Demo from "../../demo";
 // import "./icon.demo.scss";
@@ -41,6 +42,7 @@ const ButtonDemo = () => {
             <Demo code={require("!!raw-loader!./button.example.3.tsx").default}>
                 <ButtonExample3 />
             </Demo>
+
             <h3>Icon Button</h3>
             <p>
                 Use icons to add more meaning to Button. You can use icon alone
@@ -55,12 +57,18 @@ const ButtonDemo = () => {
                         attribute to add icon. You can find the icon list in
                         Element icon component. Adding icons to the right side
                         of the text is achievable with an
-                        <code className="little-code">position</code> attribute.
+                        <code className="little-code">position</code>attribute.
                         Custom icons can be used as well.
                     </div>
                 }
             >
                 <ButtonExample4 />
+            </Demo>
+
+            <h3>Loading Button</h3>
+            <p>Buttons without border and background.</p>
+            <Demo code={require("!!raw-loader!./button.example.5.tsx").default}>
+                <ButtonExample5 />
             </Demo>
         </Fragment>
     );

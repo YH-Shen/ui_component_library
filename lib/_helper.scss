@@ -118,3 +118,11 @@ $regular-text-size: 16px;
         }
     }
 }
+
+@mixin rotate-forever {
+    -moz-animation: spin 2s linear infinite;
+    -webkit-animation: spin 2s linear infinite;
+    -ms-animation: spin 2s linear infinite;
+    -o-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
