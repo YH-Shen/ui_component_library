@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 
 import DialogExample1 from "./dialog.example.1";
 import DialogExample2 from "./dialog.example.2";
+import DialogExample4 from "./dialog.example.4";
 
 import Demo from "../../demo";
 
@@ -29,11 +30,8 @@ const DialogDemo = () => {
                 <DialogExample1 />
             </Demo>
 
-            <h3>Close dialog on clicking mask</h3>
-            <p>
-                Dialog can be adjust to close when click on mask by adjusting
-                the<code className="little-code">mask</code>attribute.
-            </p>
+            <h3>Modal</h3>
+            <p>Modal dialogs.</p>
             <Demo
                 code={require("!!raw-loader!./dialog.example.2.tsx").default}
                 description={
@@ -51,6 +49,30 @@ const DialogDemo = () => {
                 }
             >
                 <DialogExample2 />
+            </Demo>
+
+            <h3>Close dialog on clicking mask</h3>
+            <p>
+                Dialog can be adjust to close when click on mask by adjusting
+                the<code className="little-code">mask</code>attribute.
+            </p>
+            <Demo
+                code={require("!!raw-loader!./dialog.example.4.tsx").default}
+                description={
+                    <div className="description">
+                        The optional<code className="little-code">mask</code>
+                        attribute has two
+                        <code className="little-code">Boolean</code>
+                        fields:
+                        <code className="little-code">visible</code>(default:
+                        <code className="little-code">true</code>) and
+                        <code className="little-code">closeOnClick</code>
+                        (default:
+                        <code className="little-code">false</code>).
+                    </div>
+                }
+            >
+                <DialogExample4 />
             </Demo>
         </Fragment>
     );
