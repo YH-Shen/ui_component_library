@@ -121,6 +121,7 @@ div.code-block-control:hover {
 }
 .description {
     background-color: white;
+    line-height: 1.4em;
     padding: 16px;
     margin: 10px;
     border: {
@@ -134,5 +135,8 @@ div.code-block-control:hover {
         border-radius: 2px;
         padding: 1px 5px;
         margin: 0 4px;
+    }
+    code {
+        font-family: Menlo, Monaco, Consolas, Courier, monospace;
     }
 }
