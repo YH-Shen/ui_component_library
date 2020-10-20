@@ -7,8 +7,8 @@ import { HashRouter as Router, Route, NavLink } from "react-router-dom";
 import Intro from "./lib/intro/intro";
 import IconDemo from "./lib/icon/icon.demo";
 import ButtonDemo from "./lib/button/button.demo";
+import DialogDemo from "./lib/dialog/dialog.demo";
 
-import DialogExample from "./lib/dialog/dialog.example";
 import LayoutExample from "./lib/layout/layout.example";
 import FormExample from "./lib/form/form.example";
 
@@ -59,7 +59,7 @@ ReactDOM.render(
 
                     <Route path="/icon" component={IconDemo}></Route>
                     <Route path="/button" component={ButtonDemo}></Route>
-                    <Route path="/dialog" component={DialogExample}></Route>
+                    <Route path="/dialog" component={DialogDemo}></Route>
                     <Route path="/layout" component={LayoutExample}></Route>
                     <Route path="/form" component={FormExample}></Route>
                 </Content>

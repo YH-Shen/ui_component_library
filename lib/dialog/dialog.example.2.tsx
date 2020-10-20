@@ -17,9 +17,7 @@ export default function () {
         <div>
             <div>
                 <h1>Example 1</h1>
-                <button onClick={() => setVisible1(!visible1)}>
-                    Click
-                </button>
+                <button onClick={() => setVisible1(!visible1)}>Click</button>
                 <Dialog
                     visible={visible1}
                     buttons={[
@@ -45,9 +43,7 @@ export default function () {
             </div>
             <div>
                 <h1>Example 2</h1>
-                <button onClick={() => setVisible2(!visible2)}>
-                    Click
-                </button>
+                <button onClick={() => setVisible2(!visible2)}>Click</button>
                 <Dialog
                     visible={visible2}
                     buttons={[
