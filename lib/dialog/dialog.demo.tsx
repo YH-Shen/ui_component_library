@@ -31,7 +31,10 @@ const DialogDemo = () => {
             </Demo>
 
             <h3>Modal</h3>
-            <p>Modal dialogs.</p>
+            <p>
+                The content of Modal Dialog can be anything, even a table or a
+                form. This example shows how to use Element Form with Dialog.
+            </p>
             <Demo
                 code={require("!!raw-loader!./dialog.example.2.tsx").default}
                 description={

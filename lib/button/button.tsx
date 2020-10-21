@@ -45,7 +45,7 @@ const Button: React.FunctionComponent<Props> = (props) => {
 
     const renderIcon = () => {
         // const IconClassName = classnames(componentName, 'icon', [size], { loading })
-        console.log("renderIcon works");
+        // console.log("renderIcon works");
         return icon && <Icon name={icon} />;
     };
     return (
