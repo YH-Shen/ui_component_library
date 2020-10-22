@@ -3,3 +3,19 @@
 A reusable UI component library based on React.
 Developed with TypeScript.
 Implementing React Router.
+
+TODOs:
+
+Demo Website:
+
+1. Add Theme and Playground Page.
+2. Add responsiveness
+3. Add traslation for other languages.
+4. Hide unnecessary demo code.
+5. Add guidlines for using.
+
+Components:
+
+1. Buttons: add loading and sized buttons.
+2. Dialog: add more complcated nested modal dialogs.
+3. Form:

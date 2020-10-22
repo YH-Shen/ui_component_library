@@ -52,17 +52,14 @@ const DialogDemo = () => {
             </Demo>
 
             <h3>Alert and Confirm</h3>
-            <p>
-                The content of Modal Dialog can be anything, even a table or a
-                form. This example shows how to use Element Form with Button.
-            </p>
+            <p>Use</p>
             <Demo
                 code={require("!!raw-loader!./dialog.example.3.tsx").default}
                 description={
                     <div className="description">
                         Pass the<code className="little-code">alert</code>or
                         <code className="little-code">confirm</code>
-                        functions into the
+                        functions from the Dialog Component into the
                         <code className="little-code">onClick</code>
                         attribute. The{" "}
                         <code className="little-code">confirm</code> dialog also
