@@ -8,13 +8,13 @@
         flex-grow: 1;
     }
 
-    & & {
+    & > & {
         flex-grow: 1;
         flex-direction: row;
     }
     &-hasAside {
         flex-direction: row;
-        .syhui-layout {
+        > .syhui-layout {
             flex-direction: column;
         }
     }

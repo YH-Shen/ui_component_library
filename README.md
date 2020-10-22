@@ -8,10 +8,10 @@ TODOs:
 
 Demo Website:
 
-1. Add Theme and Playground Page.
+1. Hide unnecessary demo code.
 2. Add responsiveness
-3. Add traslation for other languages.
-4. Hide unnecessary demo code.
+3. Add Theme and Playground Page.
+4. Add traslation for other languages.
 5. Add guidlines for using.
 
 Components:
