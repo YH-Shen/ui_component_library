@@ -144,6 +144,12 @@ body {
         }
     }
 }
+
+.demo-block > .demo-text {
+    font-size: 24px;
+    color: $regular-text;
+    margin-bottom: 16px;
+}
 .site-main > .attribute-table > table {
     border-collapse: collapse;
     width: 100%;

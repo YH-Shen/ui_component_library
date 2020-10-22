@@ -8,11 +8,11 @@ const DialogExample2: React.FunctionComponent = () => {
     const openModal = () => {
         const close = modal(
             <Fragment>
-                    <div>
-                        This is a Modal Dialog.
-                    </div>
+                <div>
+                    This is a Modal Dialog.
+                </div>
                 <footer className="syhui-dialog-footer">
-                    <Button onClick={() => close()}>close</Button>                
+                    <Button level="primary" onClick={() => close()}>close</Button>                
                 </footer>
             </Fragment>
         );

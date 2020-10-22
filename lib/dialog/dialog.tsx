@@ -4,6 +4,7 @@ import { Fragment } from "react";
 
 import { Icon } from "../index";
 import { scopedClassMaker } from "../helpers/classnames";
+import Button from "../button/button";
 
 import "./dialog.scss";
 // import Button from "lib/button";
@@ -35,10 +36,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
     const output = props.visible && (
         <Fragment>
             {props.mask && props.mask.visible && (
-                <div
-                    className={sc("mask")}
-                    onClick={onClickMask}
-                ></div>
+                <div className={sc("mask")} onClick={onClickMask}></div>
             )}
             <div className={sc("")}>
                 <div className={sc("close")} onClick={onClickClose}>
@@ -78,10 +76,7 @@ const modal = (
 ) => {
     // onClose
     const onClose = () => {
-        ReactDOM.render(
-            React.cloneElement(component, { visible: false }),
-            div
-        );
+        ReactDOM.render(React.cloneElement(component, { visible: false }), div);
         ReactDOM.unmountComponentAtNode(div);
         div.remove();
     };
@@ -108,15 +103,11 @@ const modal = (
 };
 
 const alert = (content: string) => {
-    const button = <button onClick={() => close()}>OK</button>;
+    const button = <Button onClick={() => close()}>OK</Button>;
     const close = modal(content, [button]);
 };
 
-const confirm = (
-    content: string,
-    yes?: () => void,
-    no?: () => void
-) => {
+const confirm = (content: string, yes?: () => void, no?: () => void) => {
     const onYes = () => {
         close();
         yes && yes();
@@ -128,8 +119,8 @@ const confirm = (
 
     // onClose={onNo}
     const buttons = [
-        <button onClick={onYes}>yes</button>,
-        <button onClick={onNo}>no</button>,
+        <Button onClick={onYes}>Yes</Button>,
+        <Button onClick={onNo}>No</Button>,
     ];
     const close = modal(content, buttons, no);
 };
