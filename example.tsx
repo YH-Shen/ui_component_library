@@ -10,7 +10,7 @@ import ButtonDemo from "./lib/button/button.demo";
 import DialogDemo from "./lib/dialog/dialog.demo";
 
 import LayoutDemo from "./lib/layout/layout.demo";
-import FormExample from "./lib/form/form.example";
+import FormDemo from "./lib/form/form.demo";
 
 import { Layout, Header, Aside, Content, Footer } from "./lib/layout/layout";
 import "./example.scss";
@@ -61,7 +61,7 @@ ReactDOM.render(
                     <Route path="/button" component={ButtonDemo}></Route>
                     <Route path="/dialog" component={DialogDemo}></Route>
                     <Route path="/layout" component={LayoutDemo}></Route>
-                    <Route path="/form" component={FormExample}></Route>
+                    <Route path="/form" component={FormDemo}></Route>
                 </Content>
             </Layout>
             <Footer className="site-footer" style={{}}>

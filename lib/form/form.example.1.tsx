@@ -20,7 +20,7 @@ const checkUserName = (
     }, 1000);
 };
 
-const FormExample = () => {
+const FormExample1 = () => {
     const [formData, setFormData] = useState<FormValue>({
         username: "",
         password: "",
@@ -92,4 +92,4 @@ const FormExample = () => {
     );
 };
 
-export default FormExample;
+export default FormExample1;
