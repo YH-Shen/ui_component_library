@@ -14,7 +14,9 @@
     -moz-transition: border-color 250ms;
     -ms-transition: border-color 250ms;
     -o-transition: border-color 250ms;
-
+    &:hover {
+        border-color: #c0c4cc;
+    }
     &:focus {
         outline: none;
         border-color: $main-color;
@@ -22,8 +24,5 @@
     }
     &:active {
         border-color: $main-color;
-    }
-    &:hover {
-        border-color: #c0c4cc;
     }
 }
