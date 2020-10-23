@@ -73,6 +73,9 @@ body {
         border-radius: 2px;
         padding: 1px 5px;
         margin: 0 4px;
+        &:first-child {
+            margin-left: 0;
+        }
     }
     code {
         font-family: Menlo, Monaco, Consolas, Courier, monospace;

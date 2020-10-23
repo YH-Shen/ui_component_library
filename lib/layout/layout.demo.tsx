@@ -10,6 +10,9 @@ const LayoutDemo = () => {
             <p>
                 Layout components for scaffolding basic structure of the page:
             </p>
+            <p>
+                <code className="little-code">&lt;Layout&gt;:</code>
+            </p>
             <h3>Common layouts</h3>
             <Demo code={require("!!raw-loader!./layout.example.1.tsx").default}>
                 <LayoutExample1 />

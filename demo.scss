@@ -136,6 +136,11 @@ div.code-block-control:hover {
         padding: 1px 5px;
         margin: 0 4px;
     }
+    p > .little-code {
+        &:first-child {
+            margin-left: 0;
+        }
+    }
     code {
         font-family: Menlo, Monaco, Consolas, Courier, monospace;
     }
