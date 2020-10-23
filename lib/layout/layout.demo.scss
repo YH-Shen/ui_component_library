@@ -1,0 +1,36 @@
+@import "../helper";
+.demo-header {
+    height: 64px;
+    background-color: $main-color;
+    // margin: 4px 0;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.demo-content {
+    background-color: lighten($main-color, 20%);
+    // margin: 4px 0;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.demo-aside {
+    background-color: darken($main-color, 15%);
+    // margin: 4px 0;
+    width: 200px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.demo-aside + .demo-content,
+.demo-content + .demo-aside,
+.demo-aside + .syhui-layout {
+    // margin-left: 8px;
+}
+.layout-demo-example {
+    margin-bottom: 64px;
+}

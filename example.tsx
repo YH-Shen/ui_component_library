@@ -9,7 +9,7 @@ import IconDemo from "./lib/icon/icon.demo";
 import ButtonDemo from "./lib/button/button.demo";
 import DialogDemo from "./lib/dialog/dialog.demo";
 
-import LayoutExample from "./lib/layout/layout.example";
+import LayoutDemo from "./lib/layout/layout.demo";
 import FormExample from "./lib/form/form.example";
 
 import { Layout, Header, Aside, Content, Footer } from "./lib/layout/layout";
@@ -60,7 +60,7 @@ ReactDOM.render(
                     <Route path="/icon" component={IconDemo}></Route>
                     <Route path="/button" component={ButtonDemo}></Route>
                     <Route path="/dialog" component={DialogDemo}></Route>
-                    <Route path="/layout" component={LayoutExample}></Route>
+                    <Route path="/layout" component={LayoutDemo}></Route>
                     <Route path="/form" component={FormExample}></Route>
                 </Content>
             </Layout>
