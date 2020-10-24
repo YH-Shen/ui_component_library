@@ -2,7 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 // import Icon from './lib/icon/icon';
 
-import { HashRouter as Router, Route, NavLink } from "react-router-dom";
+import {
+    HashRouter as Router,
+    Route,
+    NavLink,
+    Redirect,
+} from "react-router-dom";
 // import IconExample from "./lib/icon/icon.example";
 import Intro from "./lib/intro/intro";
 import IconDemo from "./lib/icon/icon.demo";
@@ -56,12 +61,12 @@ ReactDOM.render(
                 </Aside>
                 <Content className="site-main">
                     <Route path="/intro" component={Intro}></Route>
-
                     <Route path="/icon" component={IconDemo}></Route>
                     <Route path="/button" component={ButtonDemo}></Route>
                     <Route path="/dialog" component={DialogDemo}></Route>
                     <Route path="/layout" component={LayoutDemo}></Route>
                     <Route path="/form" component={FormDemo}></Route>
+                    <Redirect from="/#/" to="/intro" />
                 </Content>
             </Layout>
             <Footer className="site-footer" style={{}}>
