@@ -26,8 +26,8 @@ const FormExample1 = () => {
         password: "",
     });
     const [fields] = useState([
-        { name: "username", label: "username", input: { type: "text" } },
-        { name: "password", label: "password", input: { type: "password" } },
+        { name: "username", label: "Username:", input: { type: "text" } },
+        { name: "password", label: "Password:", input: { type: "password" } },
         // components must supports "value" and "onChange"
         // { name: "image", label: "avatar", input: { type: "image" } },
         // { name: "image2", label: "avatar2", input: () => {

@@ -8,10 +8,16 @@ import "./form.demo.scss";
 const FormDemo = () => {
     return (
         <Fragment>
-            <h2>Icon</h2>
-            <p>SYHUI provides a set of common icons.</p>
-            <h3>Basic Usage</h3>
-            <p>Just assign the icon name to the "name" attribute.</p>
+            <h2>Form</h2>
+            <p>
+                High performance Form component with data scope management.
+                Including data collection, verification, and styles.
+            </p>
+            <h3>Custom Validation Rules</h3>
+            <p>
+                This example shows how to customize your own validation rules to
+                finish a two-factor password async verification.
+            </p>
             <Demo code={require("!!raw-loader!./form.example.1.tsx").default}>
                 <FormExample1 />
             </Demo>

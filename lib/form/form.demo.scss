@@ -1,0 +1,13 @@
+.syhui-form {
+    &-table > tbody > &-tr > &-td {
+        > .syhui-form-input {
+            width: 11rem;
+        }
+        .syhui-button {
+            margin-left: 1rem;
+        }
+        .syhui-button:first-child {
+            margin-left: 0;
+        }
+    }
+}
