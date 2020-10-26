@@ -18,4 +18,4 @@ Components:
 
 1. Buttons: add loading and sized buttons.
 2. Dialog: add more complcated nested modal dialogs.
-3. Form: add more form components.
+3. Form: add selectable inputs, radio buttons, etc.
