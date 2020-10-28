@@ -13,6 +13,7 @@ Demo Website:
 3. Add Theme and Playground Page.
 4. Add traslation for other languages.
 5. Add guidlines for using.
+6. Add default z index standard.
 
 Components:
 
