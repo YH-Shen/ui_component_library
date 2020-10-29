@@ -14,7 +14,7 @@ const Intro = () => {
             <p>
                 TypeScript provides static type checking, whick enables
                 developers to catch errors before running the code. SYHUI is
-                mainly written with TypeScript for code rubsutness.
+                mainly written with TypeScript for code robustness.
             </p>
             <h3>No External Dependencies</h3>
             <p>
