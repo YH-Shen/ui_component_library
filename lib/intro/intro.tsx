@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-// import "./icon.demo.scss";
 
 const Intro = () => {
     return (
