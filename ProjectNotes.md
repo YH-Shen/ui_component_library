@@ -149,7 +149,7 @@ type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | und
    Deconstruct props first:
    const { className, ...rest } = props;
    And then join the pre-written class name with given classname to be the final className. Use "...rest" for the rest of the props attributes.
-     <div className={[sc(), className].join(" ")} {...rest}>
+      <div className={[sc(), className].join(" ")} {...rest}>
 
     But this method is so inconnvienet... Then I improved scopeMaker function to takein the extra classname
 
@@ -179,7 +179,7 @@ conosle.log( refInput.current!.value);
 }
 <input defaultValue={name} ref={refInput} type="text" onBlur={x}/>
 
-############### form difference from AntD
+################# form difference from AntD
 
 feedback all the value on change:
 
