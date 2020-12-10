@@ -179,7 +179,7 @@ conosle.log( refInput.current!.value);
 }
 <input defaultValue={name} ref={refInput} type="text" onBlur={x}/>
 
-########### form difference from AntD
+######### form difference from AntD
 
 feedback all the value on change:
 
