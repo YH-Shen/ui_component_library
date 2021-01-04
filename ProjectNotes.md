@@ -149,7 +149,7 @@ type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | und
    Deconstruct props first:
    const { className, ...rest } = props;
    And then join the pre-written class name with given classname to be the final className. Use "...rest" for the rest of the props attributes.
-    <div className={[sc(), className].join(" ")} {...rest}>
+      <div className={[sc(), className].join(" ")} {...rest}>
 
     But this method is so inconnvienet... Then I improved scopeMaker function to takein the extra classname
 
@@ -185,3 +185,11 @@ feedback all the value on change:
 
 1. No need to reprocess the data.
 2. Might be slow if there are tons of input, but it's a rare case
+
+########## Move to algorithm notes tomorrow.
+Selection Sort, Merge Sort, Count Sort, Quick Sort
+Any Comparison based algorithm cannot be asymptotically faster than nlogn
+
+Quick Sort on average is nlog\*(n), could be n^2 for worst case.
+Could use random pivoits for better balanced partition.
+Use 3-way partitioning for equal numbers
