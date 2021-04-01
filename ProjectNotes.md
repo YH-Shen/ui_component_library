@@ -1,6 +1,6 @@
-<title>Project Notes</title>
+#Project Notes#
 
-######## npm install & yarn install
+### npm install & yarn install
 
 --save-dev/--dev/-S-D: For pachages that are only used by developers
 --save/"nothing"/-S: For packages that are also used by users (users' browser).
@@ -91,7 +91,7 @@ style_tag = document.createElement("style tag")
 style_tag.innerHTML = "css"
 document.head.appendChild(style_tag)
 
-############# highlights
+## highlights
 
 webpack: used awesome-typescript-loader and html-webpack-plugin
 circle ci
@@ -149,7 +149,7 @@ type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | und
    Deconstruct props first:
    const { className, ...rest } = props;
    And then join the pre-written class name with given classname to be the final className. Use "...rest" for the rest of the props attributes.
-       <div className={[sc(), className].join(" ")} {...rest}>
+    <div className={[sc(), className].join(" ")} {...rest}>
 
     But this method is so inconnvienet... Then I improved scopeMaker function to takein the extra classname
 
