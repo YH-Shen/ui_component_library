@@ -2,22 +2,23 @@
 
 ---
 
-1. [Project Highlights](#project-highlights)
-2. [Webpack Setup](#webpack-setup)
-    - [Setup Steps](#setup-steps)
+1.  [Project Highlights](#project-highlights)
+2.  [Webpack Setup](#webpack-setup)
+    -  [Setup Steps](#setup-steps)
+    -  [Key Takeaways](#key-takeaways)
 
 ---
 
 ## Project Highlights ##
 
-webpack: used awesome-typescript-loader and html-webpack-plugin
-circle ci
-test coverage
-auto test, auto bundle, and auto npm publish after push!
-react router
-used scss attribute selector to avoid interference
-used react protal to prevent context stacking
-have highlited code demo
+-  webpack: used awesome-typescript-loader and html-webpack-plugin
+-  circle ci
+-  test coverage
+-  auto test, auto bundle, and auto npm publish after push!
+-  react router
+-  used scss attribute selector to avoid interference
+-  used react protal to prevent context stacking
+-  have highlited code demo
 
 Dialog:
 onClose={() => {
@@ -40,19 +41,26 @@ Promise.all only accepts arrays. So I used nested arrays first. And then combine
 Used yarn (try to avoid npm), webpack 4, webpack-dev-server 3, TypeScript 3
 
 ### Setup Steps: ### 
-1. Make directories and create library
-2. npm init
-3. create lib/index.tsx
-4. create webpack.config.js: setup entry, output, modeule.rules(jsx, tsx, scss), plugins
-5. setup webpack-dev-server, and webpack.config.dev.js
-6. create index.html
-7. setup webpack.config.prod.js
-8. create examples preview and webpack config.doc.js
-9. introduce tests
-10. introduce CI (continuous integration, used circle CI)
-11. setup tsconfig.json and tslint.json
-12. setup scripts (yarn start, yarn build, yarn test)
-13. customized tasks (yarn task create component x)
+1.  Make directories and create library
+2.  npm init
+3.  create lib/index.tsx
+4.  create webpack.config.js: setup entry, output, modeule.rules(jsx, tsx, scss), plugins
+5.  setup webpack-dev-server, and webpack.config.dev.js
+6.  create index.html
+7.  setup webpack.config.prod.js
+8.  create examples preview and webpack config.doc.js
+9.  introduce tests
+10.  introduce CI (continuous integration, used circle CI)
+11.  setup tsconfig.json and tslint.json
+12.  setup scripts (yarn start, yarn build, yarn test)
+13.  customized tasks (yarn task create component x)
+
+### Key Takeaways ###
+1.  What do dev, prod, and test envrironments do?
+2.  Why seperating these environments?
+3.  Why do we generate index.html instead of mannually write one?
+4.  What does CI do?
+5.  How to start developing?
 
 ### npm install & yarn install ###
 
