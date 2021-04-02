@@ -2,13 +2,13 @@
 
 ---
 
-1. [Project Highlights](#Project Highlights)
-2. [Webpack Setup](#Webpack Setup)
-    - [Setup Steps](#Setup Steps)
+1. [Project Highlights](#project-highlights)
+2. [Webpack Setup](#webpack-setup)
+    - [Setup Steps](#setup-steps)
 
 ---
 
-## Project Highlights
+## Project Highlights ##
 
 webpack: used awesome-typescript-loader and html-webpack-plugin
 circle ci
