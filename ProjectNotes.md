@@ -1,9 +1,10 @@
-# Project Notes
+# Project Notes #
 
 ---
 
 1. [Project Highlights](#Project Highlights)
-2.
+2. [Webpack Setup](#Webpack Setup)
+    - [Setup Steps](#Setup Steps)
 
 ---
 
@@ -34,7 +35,26 @@ form validation
 Asychornous validation with promise.all**\*** very complicated - challenge
 Promise.all only accepts arrays. So I used nested arrays first. And then combine the nested arrays together into one long nested array. And then zip the array
 
-### npm install & yarn install
+## Webpack Setup ##
+
+Used yarn (try to avoid npm), webpack 4, webpack-dev-server 3, TypeScript 3
+
+### Setup Steps: ### 
+1. Make directories and create library
+2. npm init
+3. create lib/index.tsx
+4. create webpack.config.js: setup entry, output, modeule.rules(jsx, tsx, scss), plugins
+5. setup webpack-dev-server, and webpack.config.dev.js
+6. create index.html
+7. setup webpack.config.prod.js
+8. create examples preview and webpack config.doc.js
+9. introduce tests
+10. introduce CI (continuous integration, used circle CI)
+11. setup tsconfig.json and tslint.json
+12. setup scripts (yarn start, yarn build, yarn test)
+13. customized tasks (yarn task create component x)
+
+### npm install & yarn install ###
 
 --save-dev/--dev/-S-D: For pachages that are only used by developers
 --save/"nothing"/-S: For packages that are also used by users (users' browser).
@@ -157,7 +177,7 @@ type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | und
    Deconstruct props first:
    const { className, ...rest } = props;
    And then join the pre-written class name with given classname to be the final className. Use "...rest" for the rest of the props attributes.
-     <div className={[sc(), className].join(" ")} {...rest}>
+      <div className={[sc(), className].join(" ")} {...rest}>
 
     But this method is so inconnvienet... Then I improved scopeMaker function to takein the extra classname
 
