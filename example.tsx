@@ -26,6 +26,7 @@ console.log(x.default);
 
 ReactDOM.render(
     <Router>
+        <title>SYHUI</title>
         <Layout className="site-page" style={{}}>
             <Header className="site-header" style={{}}>
                 <div className="logo">

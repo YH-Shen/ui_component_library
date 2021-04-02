@@ -42,30 +42,51 @@ Used yarn (try to avoid npm), webpack 4, webpack-dev-server 3, TypeScript 3
 
 ### Setup Steps: ### 
 1.  Make directories and create library
-2.  npm init
-3.  create lib/index.tsx
-4.  create webpack.config.js: setup entry, output, modeule.rules(jsx, tsx, scss), plugins
-5.  setup webpack-dev-server, and webpack.config.dev.js
-6.  create index.html
-7.  setup webpack.config.prod.js
-8.  create examples preview and webpack config.doc.js
-9.  introduce tests
-10.  introduce CI (continuous integration, used circle CI)
-11.  setup tsconfig.json and tslint.json
-12.  setup scripts (yarn start, yarn build, yarn test)
-13.  customized tasks (yarn task create component x)
+        - used git repo
+2.  npm init -y
+        - creates package.json
+3.  Create lib/index.tsx after installed webpack
+        - yarn add webpack webpack webpack-cli -dev
+4.  Create webpack.config.js: 
+        - setup entry, output, modeule.rules(jsx, tsx, scss), plugins
+        - translates entry scripts with rules defined, and different loaders. 
+        - output to the absolute address defined. Use path.resolve to parse addresses for different operating systems.
+        - ouput libraryTarget: use umd to accomodate for both commonJS and amd.
+        - pack index.tsx into index.js
+5.  Setup webpack-dev-server, and webpack.config.dev.js
+        - webpack-dev-server monitors the 8080 port
+        - webpack-dev-server also provides realtime translation of the tsx document into js strings in memories for faster speed
+        - when the user visits the 8080/js document, the server takes the js strings in memory and presents it to the user
+6.  Create index.html
+7.  Setup webpack.config.prod.js
+8.  Create examples preview and webpack config.doc.js
+9.  Introduce tests
+10.  Introduce CI (continuous integration, used circle CI)
+11.  Setup tsconfig.json and tslint.json
+12.  Setup scripts (yarn start, yarn build, yarn test)
+13.  Customized tasks (yarn task create component x)
 
 ### Key Takeaways ###
 1.  What do dev, prod, and test envrironments do?
 2.  Why seperating these environments?
 3.  Why do we generate index.html instead of mannually write one?
+    - The index.html scripts depends on the config setups in other scripts. Genertating the index.html automates the work flow and avoids possible human mistakes. 
 4.  What does CI do?
 5.  How to start developing?
 
+### awesome-typescript-loader ###
+
+### html-webpack-plugin ###
+A webpack plugin to automatically generate and update html file that includes all the webpack bundle and config updates.
+
 ### npm install & yarn install ###
 
---save-dev/--dev/-S-D: For pachages that are only used by developers
---save/"nothing"/-S: For packages that are also used by users (users' browser).
+#### --save-dev/--dev/-S-D ####
+    For pachages that are only used by developers. 
+    Example: Webpack, TypeScript
+#### --save/"nothing"/-S #### 
+    For packages that are also used by users (users' browser).
+    Example: React, jQuery
 
 --save is the default setting if nothing is added for installation.
 
