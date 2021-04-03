@@ -57,6 +57,7 @@ Used yarn (try to avoid npm), webpack 4, webpack-dev-server 3, TypeScript 3
         - webpack-dev-server monitors the 8080 port
         - webpack-dev-server also provides realtime translation of the tsx document into js strings in memories for faster speed
         - when the user visits the 8080/js document, the server takes the js strings in memory and presents it to the user
+        - now we can use "npx webpack-dev-server" command to launch a server for development. or "yarn start" as defined in package.json
 6.  Create index.html
 7.  Setup webpack.config.prod.js
 8.  Create examples preview and webpack config.doc.js
