@@ -86,11 +86,21 @@ A webpack plugin to automatically generate and update html file that includes al
 ### npm install & yarn install ###
 
 #### --save-dev/--dev/-S-D ####
-    For pachages that are only used by developers. 
-    Example: Webpack, TypeScript
+        ```linux
+        --save-dev
+        --dev
+        -S-D
+        ```
+For pachages that are only used by developers. 
+Example: Webpack, TypeScript
 #### --save/"nothing"/-S #### 
-    For packages that are also used by users (users' browser).
-    Example: React, jQuery
+        ```linux
+        --save
+        
+        -S
+        ```
+For packages that are also used by users (users' browser).
+Example: React, jQuery
 
 --save is the default setting if nothing is added for installation.
 
@@ -117,7 +127,7 @@ externals: {
         }
 ```
 
-######## importing
+### importing ###
 
 Importing ADDRESS:
 Use relative address if importing from your own file
@@ -132,9 +142,9 @@ import {PARA_NAME} from ADDRESS
 importing a combination:
 import GIVEN_NAME, {PARA_NAME, ...} from ADDRESS
 
-################# React Class this
+### React Class this ###
 
-Method 1:
+#### Method 1: ####
 define a function with format: x = () => {}
 
 constructor(props){
@@ -152,12 +162,12 @@ n: 2
 
 It is a simplified way of definining this.x in the consturctor. Therefore, this method has a problem of taking too much memory. Every case ran requies it's own definition of this.x.
 
-Method 2:
+#### Method 2: ####
 Mannually bind this in jsx
 
 <button onClick={this.x.bind(this)}>button</button>
 
-Method 3:
+#### Method 3: ####
 Mannually bind this in the consturctor.
 
 constructor(props){
@@ -172,7 +182,7 @@ this.y = this.x.bind(this)
 
 Method 1 is the simplified version of method 3.
 
-############## Axios trick with useEffect hook
+### Axios trick with useEffect hook ###
 
 The empty second variable of useEffect hook makes it runs only once when mounted.
 Perfect chance to use axios.get information here.
@@ -181,12 +191,12 @@ useEffect(() => {
 axios.get('')
 }, [])
 
-############### static importing and dynamic importing
+### static importing and dynamic importing ###
 
 static: suitable for tree-shaking optimization but not as convinent for importing many items
 dynamic: scalable
 
-############### style loader, css loader, sass loader
+### style loader, css loader, sass loader ###
 
 sass loader translates scss doc into css doc as strings.
 css laoder converts the css doc into an object with strings inside.
@@ -196,7 +206,7 @@ style_tag = document.createElement("style tag")
 style_tag.innerHTML = "css"
 document.head.appendChild(style_tag)
 
-########## npm version
+ ### npm version  ###
 
 major.minor.patch
 
@@ -206,13 +216,13 @@ npm version major >>>> 0.0.1 -> 1.0.0 for major change in API, affects cuurent c
 npm version minor >>>> 0.0.1 -> 0.1.0 for minor change in API, doesn't affect current code
 npm version patch >>>> 0.0.1 -> 0.0.2 for bug fixes, no API changes
 
-########### React.ReactNode vs React.ReactElement
+ ### React.ReactNode vs React.ReactElement ###
 
 ReactElement can only take tags. ReactNode can take both tags and strings.
 
 type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | undefined;
 
-########## Key Takeaways for Dialog Component
+ ### Key Takeaways for Dialog Component  ###
 
 1. Use example for easier development
 2. Used Scoped CLass (higher-order function) for quicker tag naming. Used "syhui-" prefix to avoid interference.
@@ -222,7 +232,7 @@ type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | und
 6. Dynamically render/generate components: declare component as const. Attach the component inside a div, and then append the div onto document.body.
 7. Pass API from enclosure: return a function that controls the varibale inside the enclosure
 
-########## Key Takeaways for Layout Component
+### Key Takeaways for Layout Component ###
 
 1. Receive attributes for layout may overwirte pre-written classes.
    Deconstruct props first:
@@ -234,13 +244,12 @@ type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | und
 
 2. Used Functional Programming to refactor scopedClassMaker!!!
 3. Used NavLink for the "active" state displayment
-
-############# Component Options
+### Component Options ###
 
 1. General and widely applicable(ie. AntD), but is more complicated in use
 2. Focused and customed(libraries used inside companies): less overall support but more user friendly and customized
 
-############ Controlled and uncontrolled component
+### Controlled and uncontrolled component ###
 Reccomend forms to use controlled components: useState as only source of truth.
 Principle of React UI component: UI = f(state)
 
@@ -258,7 +267,7 @@ conosle.log( refInput.current!.value);
 }
 <input defaultValue={name} ref={refInput} type="text" onBlur={x}/>
 
-############## form difference from AntD
+### form difference from AntD ###
 
 feedback all the value on change:
 

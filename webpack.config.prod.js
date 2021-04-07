@@ -7,6 +7,8 @@ module.exports = Object.assign({}, base, {
         ...base.entry,
         example: "./example.tsx",
     },
+    // Removes react from the library beaucse users
+    // for this react UI library already have it installed 
     externals: {
         react: {
             commonjs: "react",
