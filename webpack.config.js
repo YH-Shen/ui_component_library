@@ -31,7 +31,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif)$/,
-                use: ["file-loader"],
+                loader: "file-loader",
             },
         ],
     },
@@ -41,6 +41,8 @@ module.exports = {
     //         template: "index.html",
     //     }),
     // ],
+    // // Removes react from the library beaucse users
+    // // for this react UI library already have it installed 
     // externals: {
     //     react: {
     //         commonjs: "react",

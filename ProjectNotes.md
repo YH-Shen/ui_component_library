@@ -6,6 +6,9 @@
 2.  [Webpack Setup](#webpack-setup)
     -  [Setup Steps](#setup-steps)
     -  [Key Takeaways](#key-takeaways)
+    -  [html-webpack-plugin](#html-webpack-plugin)
+    -  [npm install & yarn install](#npm-install-&-yarn-install)
+    -  [yarn.lock file](#yarn.lock-file)
 
 ---
 
@@ -91,10 +94,28 @@ A webpack plugin to automatically generate and update html file that includes al
 
 --save is the default setting if nothing is added for installation.
 
-######## yarn.lock file (what is this file?)
+### yarn.lock file (what is this file?) ###
 
 1. The lock file for yarn. (gnerated when using yarn to manage npm dependencies.)
-2. It locks down the versions for the dependencies specified in the package.json file
+2. It locks down the versions for all the dependencies specified in the package.json file. Ther versions do not have to be the same as long as it works.
+
+### Exclude React and react DOM from the packed bundle ###
+Exclude React and react DOM from the packed bundle becasue the users of this react UI library definetrly have react installed already. Excluding by setting "externals" module in the webpack.config file:
+```json
+externals: {
+        react: {
+            commonjs: "react",
+            commonjs2: "react",
+            amd: "react",
+            root: "React",
+        },
+        "react-dom": {
+            commonjs: "react-dom",
+            commonjs2: "react-dom",
+            amd: "react-dom",
+            root: "ReactDOM",
+        }
+```
 
 ######## importing
 
