@@ -12,14 +12,14 @@ const Intro = () => {
             </p>
             <h3>Use of TypeScript</h3>
             <p>
-                TypeScript provides static type checking, whick enables
+                TypeScript provides static type checking, which enables
                 developers to catch errors before running the code. SYHUI is
                 mainly written with TypeScript for code robustness.
             </p>
             <h3>No External Dependencies</h3>
             <p>
-                SYHUI depends only on React, and ReactDOM as two core
-                libraryies. No other external dependencies.
+                SYHUI depends only on React, and ReactDOM as two core libraries.
+                No other external dependencies.
             </p>
         </Fragment>
     );
