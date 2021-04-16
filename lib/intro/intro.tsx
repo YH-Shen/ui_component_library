@@ -7,7 +7,7 @@ const Intro = () => {
             <h2>SYHUI</h2>
             <p>
                 SYHUI is a desktop UI component library based on React. The
-                color and UI illustrations were referenced from other libraryies
+                color and UI illustrations were referenced from other libraries
                 such as Ant Design and Element.{" "}
             </p>
             <h3>Use of TypeScript</h3>
